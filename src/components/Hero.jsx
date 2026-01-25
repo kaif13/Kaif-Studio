@@ -3,7 +3,7 @@ import { ArrowRight, FileText } from "lucide-react";
 
 const Hero = () => {
   // IMPORTANT: Make sure you have a file named 'resume.pdf' in your public folder.
-  const resumeLink = "/resume.pdf";
+  const resumeLink = "/Resume.pdf";
 
   return (
     <section
