@@ -8,8 +8,8 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "Services", href: "#services" }, // ADDED THIS
     { name: "Work", href: "#work" },
+    { name: "Services", href: "#services" }, // ADDED THIS
     { name: "Contact", href: "#contact" },
   ];
 
