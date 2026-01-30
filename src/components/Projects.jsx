@@ -23,13 +23,13 @@ const projects = [
     img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "https://broadway-kia.netlify.app/",
   },
-  // {
-  //   title: "Kaif Travel Blog",
-  //   cat: "Personal Blog",
-  //   desc: "My official freelance portfolio designed to showcase my frontend development skills and services.",
-  //   img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop",
-  //   link: "https://travel-blog-kaif.netlify.app/",
-  // },
+  {
+    title: "FlowBase",
+    cat: "Landing Page",
+    desc: "A business-focused landing page showcasing frontend development services, skills, and solutions to help brands build fast, modern, and user-friendly web experiences.",
+    img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop",
+    link: "https://landingpagekaif.netlify.app/",
+  },
 ];
 
 const Projects = () => {
