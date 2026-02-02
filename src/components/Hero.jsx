@@ -1,71 +1,65 @@
 import React from "react";
 import { ArrowRight, FileText } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "../../animations";
 
 const Hero = () => {
-  // IMPORTANT: Make sure you have a file named 'resume.pdf' in your public folder.
-  const resumeLink = "/Resume.pdf";
-
   return (
     <section
       id="about"
-      className="relative pt-40 pb-24 px-6 max-w-7xl mx-auto min-h-[85vh] flex items-center overflow-hidden"
+      className="relative pt-28 pb-24 px-6 max-w-7xl mx-auto min-h-[85vh] flex items-center overflow-hidden"
     >
-      {/* 
-        BACKGROUND ACCENT 
-        A very subtle blue glow in the top right to mix with the B&W theme.
-        This prevents the site from feeling "dead".
-      */}
       <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[100px] opacity-50"></div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        {/* Left Side: Text & Buttons */}
-        <div className="flex flex-col items-start z-10">
+        {/* LEFT SIDE */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-start z-10"
+        >
           {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 border border-black/5 dark:border-white/10 px-4 py-1.5 rounded-full mb-8 bg-light/50 dark:bg-dark/50 backdrop-blur-md">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-dark dark:text-light">
-              Available for new projects
-            </span>
-          </div>
+          <motion.div variants={fadeUp}>
+            <div className="inline-flex items-center gap-2 border border-black/5 dark:border-white/10 px-4 py-1.5 rounded-full mb-8 bg-light/50 dark:bg-dark/50 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-xs font-mono font-bold uppercase tracking-widest text-dark dark:text-light">
+                Now accepting client projects
+              </span>
+            </div>
+          </motion.div>
 
           {/* Headline */}
-          <h1 className="font-heading font-bold text-5xl md:text-7xl leading-[1.1] mb-6">
-            {/* "Crafting" - Solid Black in Light Mode, Solid White in Dark Mode */}
-            <span className="text-black dark:text-white">Crafting</span> <br />
-            {/* "Digital Perfection" - Gradient Text */}
+          <motion.h1
+            variants={fadeUp}
+            className="font-heading font-bold text-5xl md:text-7xl leading-[1.1] mb-6"
+          >
+            <span className="text-black dark:text-white">Websites</span> <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/90 to-black/10 dark:from-white dark:to-white/10">
-              Digital Perfection.
+              that help service businesses grow.
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-gray mb-10 leading-relaxed max-w-lg font-body">
+          <motion.p
+            variants={fadeUp}
+            className="text-lg md:text-xl text-gray mb-10 leading-relaxed max-w-lg font-body"
+          >
             I'm{" "}
             <span className="text-dark dark:text-light font-bold">Kaif</span>. I
-            engineer accessible, pixel-perfect web interfaces using
-            <span className="text-dark dark:text-light font-bold underline decoration-1 underline-offset-4">
-              {" "}
-              React
-            </span>{" "}
-            and
-            <span className="text-dark dark:text-light font-bold underline decoration-1 underline-offset-4">
-              {" "}
-              Tailwind
-            </span>
-            .
-          </p>
+            design and build fast, modern websites that help service-based
+            businesses turn visitors into real inquiries and customers.
+          </motion.p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-4">
-            {/* PRIMARY BUTTON: Electric Blue (The 10% Color Rule) */}
+          <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
             <a
               href="#contact"
               className="
-                group
-                px-8 py-4 rounded-full 
+                group px-8 py-4 rounded-full 
                 font-bold font-heading text-sm uppercase tracking-widest
                 bg-brand text-white border border-brand
                 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]
@@ -74,18 +68,15 @@ const Hero = () => {
                 flex items-center gap-2
               "
             >
-              Let's Talk{" "}
+              Get a free website review
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform"
               />
             </a>
 
-            {/* SECONDARY BUTTON: Resume */}
             <a
-              href={resumeLink}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#work"
               className="
                 group relative overflow-hidden
                 bg-dark dark:bg-light 
@@ -97,24 +88,31 @@ const Hero = () => {
               "
             >
               <FileText size={18} />
-              <span>Resume</span>
+              <span>View work examples</span>
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Right Side: Photo */}
-        {/* Right Side: The "Code Window" (Replaces the Photo) */}
-        <div className="relative group flex justify-center md:justify-end perspective-1000">
+        {/* RIGHT SIDE */}
+        {/* Right Side: The "Code Window" */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.25 }}
+          className="relative group flex justify-center md:justify-end perspective-1000"
+        >
           {/* The Blue Glow behind the code */}
           <div className="absolute inset-0 bg-brand/20 blur-[100px] rounded-full -z-10"></div>
 
           {/* The Code Window Card */}
           <div
             className="
-    relative w-full max-w-md bg-[#1e1e1e] rounded-xl overflow-hidden 
-    border border-white/10 shadow-2xl shadow-brand/20
-    transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-[1.02]
-  "
+      relative w-full max-w-md bg-[#1e1e1e] rounded-xl overflow-hidden 
+      border border-white/10 shadow-2xl shadow-brand/20
+      transform transition-transform duration-500 
+      group-hover:rotate-1 group-hover:scale-[1.02]
+    "
           >
             {/* Window Title Bar */}
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5">
@@ -148,19 +146,19 @@ const Hero = () => {
 
               <div className="flex">
                 <span className="text-gray-500 w-6 select-none">3</span>
-                <span className="text-green-400 ml-8">'React'</span>
+                <span className="text-green-400 ml-8">'Business Websites'</span>
                 <span className="text-white">,</span>
               </div>
 
               <div className="flex">
                 <span className="text-gray-500 w-6 select-none">4</span>
-                <span className="text-green-400 ml-8">'Next.js'</span>
+                <span className="text-green-400 ml-8">'Landing Pages'</span>
                 <span className="text-white">,</span>
               </div>
 
               <div className="flex">
                 <span className="text-gray-500 w-6 select-none">5</span>
-                <span className="text-green-400 ml-8">'Tailwind CSS'</span>
+                <span className="text-green-400 ml-8">'Website Redesigns'</span>
               </div>
 
               <div className="flex">
@@ -208,14 +206,14 @@ const Hero = () => {
                 <span className="text-white">{"}"};</span>
               </div>
 
-              {/* Blinking Cursor Effect */}
+              {/* Blinking Cursor */}
               <div className="flex mt-2">
                 <span className="text-gray-500 w-6 select-none">14</span>
                 <span className="ml-4 w-2 h-5 bg-brand animate-pulse"></span>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

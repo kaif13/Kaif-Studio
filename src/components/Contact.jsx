@@ -1,21 +1,23 @@
 import React, { useState, useRef } from "react";
-import emailjs from "@emailjs/browser"; // Make sure to npm install @emailjs/browser
-import { Github, Linkedin, Instagram, X, CheckCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { Github, Linkedin, Instagram, CheckCircle } from "lucide-react";
+import { fadeUp } from "../../animations";
 
 // --- POPUP COMPONENT ---
 const SuccessPopup = ({ onClose }) => (
   <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity">
-    <div className="bg-light dark:bg-dark border border-black/10 dark:border-white/10 p-8 rounded-2xl shadow-2xl max-w-sm w-full transform scale-100 transition-transform">
+    <div className="bg-light dark:bg-dark border border-black/10 dark:border-white/10 p-8 rounded-2xl shadow-2xl max-w-sm w-full">
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400">
           <CheckCircle size={32} />
         </div>
         <h3 className="text-2xl font-heading font-bold text-dark dark:text-light">
-          Message Sent!
+          Message Sent Successfully
         </h3>
         <p className="text-gray text-sm">
-          Thanks for reaching out. I'll get back to you at your email address
-          shortly.
+          Thanks for reaching out. I’ll review your message and reply to your
+          email as soon as possible.
         </p>
         <button
           onClick={onClose}
@@ -33,26 +35,21 @@ const Contact = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
-  // --- HANDLE SUBMIT ---
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSending(true);
 
-    // REPLACE THESE WITH YOUR ACTUAL EMAILJS KEYS
-    // Sign up at https://www.emailjs.com/ to get these
     const SERVICE_ID = "service_ctjbsw1";
     const TEMPLATE_ID = "template_wkmkjau";
     const PUBLIC_KEY = "04BYAD5utF95GCb7n";
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY).then(
-      (result) => {
-        console.log(result.text);
+      () => {
         setIsSending(false);
-        setShowPopup(true); // Show the thank you popup
-        e.target.reset(); // Clear the form
+        setShowPopup(true);
+        e.target.reset();
       },
-      (error) => {
-        console.log(error.text);
+      () => {
         setIsSending(false);
         alert("Failed to send message. Please try again later.");
       },
@@ -61,26 +58,31 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto relative">
-      {/* Render Popup if State is true */}
       {showPopup && <SuccessPopup onClose={() => setShowPopup(false)} />}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-        {/* Left Side: Info */}
-        <div className="flex flex-col justify-between">
+        {/* LEFT SIDE */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-col justify-between"
+        >
           <div>
             <h2 className="font-heading font-bold text-5xl md:text-7xl mb-8 text-dark dark:text-light">
-              Let's work <br />
-              <span className="text-gray/50">together.</span>
+              Start your <br />
+              <span className="text-gray/50">project.</span>
             </h2>
 
             <p className="text-lg md:text-xl text-gray mb-12 font-body leading-relaxed max-w-md">
-              I help brands and companies build digital solutions that are not
-              only functional but also captivating.
+              Tell me about your business and what you’re looking to build. I’ll
+              review your request and let you know the next steps clearly.
             </p>
 
             <div className="space-y-2 mb-10">
               <p className="text-xs uppercase font-bold text-gray">
-                Drop me an email
+                Or email me directly
               </p>
               <a
                 href="mailto:mohamaddkaif0602@gmail.com"
@@ -91,10 +93,9 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Social Icons */}
           <div>
             <p className="text-xs uppercase font-bold text-gray mb-4">
-              Follow Me
+              Connect with me
             </p>
             <div className="flex gap-4">
               <a
@@ -117,13 +118,19 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Side: Form */}
-        <div className="bg-light dark:bg-dark border border-black/10 dark:border-white/10 p-8 rounded-2xl h-fit">
+        {/* RIGHT SIDE: FORM */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="bg-light dark:bg-dark border border-black/10 dark:border-white/10 p-8 rounded-2xl h-fit"
+        >
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
-            {/* NAME INPUT */}
-            <div className="group">
+            <div>
               <label className="text-xs uppercase font-bold text-gray mb-2 block">
                 Name
               </label>
@@ -132,12 +139,11 @@ const Contact = () => {
                 name="user_name"
                 required
                 className="w-full bg-transparent border-b border-black/20 dark:border-white/20 py-3 text-lg text-dark dark:text-light focus:outline-none focus:border-dark dark:focus:border-light transition-colors"
-                placeholder="Enter your name"
+                placeholder="Your full name"
               />
             </div>
 
-            {/* EMAIL INPUT */}
-            <div className="group">
+            <div>
               <label className="text-xs uppercase font-bold text-gray mb-2 block">
                 Email
               </label>
@@ -146,21 +152,20 @@ const Contact = () => {
                 name="user_email"
                 required
                 className="w-full bg-transparent border-b border-black/20 dark:border-white/20 py-3 text-lg text-dark dark:text-light focus:outline-none focus:border-dark dark:focus:border-light transition-colors"
-                placeholder="Enter your email"
+                placeholder="Your email address"
               />
             </div>
 
-            {/* MESSAGE INPUT */}
-            <div className="group">
+            <div>
               <label className="text-xs uppercase font-bold text-gray mb-2 block">
-                Message
+                Project Details
               </label>
               <textarea
                 name="message"
                 rows="4"
                 required
                 className="w-full bg-transparent border-b border-black/20 dark:border-white/20 py-3 text-lg text-dark dark:text-light focus:outline-none focus:border-dark dark:focus:border-light transition-colors resize-none"
-                placeholder="Tell me about your project..."
+                placeholder="Briefly describe your business and what you need help with"
               ></textarea>
             </div>
 
@@ -169,10 +174,10 @@ const Contact = () => {
               disabled={isSending}
               className="w-full py-4 bg-dark dark:bg-light text-light dark:text-dark font-bold rounded-md hover:opacity-90 transition-opacity uppercase tracking-widest text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isSending ? "Sending..." : "Send Message"}
+              {isSending ? "Sending..." : "Request a response"}
             </button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

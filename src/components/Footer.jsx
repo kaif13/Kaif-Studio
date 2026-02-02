@@ -11,7 +11,7 @@ const Footer = () => {
 
         {/* Subtle Subtext */}
         <p className="text-xs text-gray font-mono uppercase tracking-widest opacity-60 text-center">
-          Designed & Built with ❤️
+          Designed and built for business use
         </p>
       </div>
     </footer>

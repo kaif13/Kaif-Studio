@@ -2,14 +2,12 @@ import React from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
 
 const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
-  // Helper to close menu when a link is clicked
   const handleLinkClick = () => setIsMenuOpen(false);
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
     { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" }, // ADDED THIS
+    { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -57,30 +55,27 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
         </div>
       </div>
 
-      {/* 
-        THE MISSING PIECE: Mobile Dropdown 
-        This only renders if isMenuOpen is true 
-      */}
+      {/* Mobile Dropdown */}
       {isMenuOpen && (
         <div className="absolute top-20 left-0 w-full bg-light dark:bg-dark border-b border-black/10 dark:border-white/10 p-6 flex flex-col gap-6 md:hidden shadow-xl animate-fade-in-down">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              onClick={handleLinkClick} // Closes menu when clicked
+              onClick={handleLinkClick}
               className="text-xl font-heading font-bold text-dark dark:text-light hover:translate-x-2 transition-transform"
             >
               {link.name}
             </a>
           ))}
 
-          {/* Mobile Resume Button (Optional but good) */}
+          {/* Mobile CTA */}
           <a
-            href="/resume.pdf"
-            target="_blank"
-            className="mt-4 text-center py-3 w-full border border-black/10 dark:border-white/10 rounded-lg text-dark dark:text-light uppercase tracking-widest text-xs font-bold"
+            href="#contact"
+            onClick={handleLinkClick}
+            className="mt-4 text-center py-3 w-full bg-brand text-white rounded-lg uppercase tracking-widest text-xs font-bold"
           >
-            Resume
+            Get a free website review
           </a>
         </div>
       )}

@@ -1,15 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer } from "../../animations";
 
 const skillList = [
-  "HTML",
-  "CSS",
-  "Javascript",
-  "Tailwind CSS",
-  "React.js",
-  "Figma",
-  "Routing",
-  "Redux",
-  "Shadcn UI",
+  "Business Website Development",
+  "Landing Page Design",
+  "Mobile-First Design",
+  "Website Redesign & Modernization",
+  "Fast & Responsive UI",
+  "Conversion-Focused Layouts",
+  "Clean & Simple User Experience",
+  "Performance Optimization",
+  "Design-to-Code Implementation",
 ];
 
 const Skills = () => {
@@ -18,15 +20,28 @@ const Skills = () => {
       id="skills"
       className="py-24 px-6 max-w-5xl mx-auto border-t border-black/5 dark:border-white/10"
     >
-      <div className="text-center">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-center"
+      >
         <h2 className="font-heading font-bold text-3xl mb-10 text-dark dark:text-light">
-          Expertise
+          What I Help Businesses With
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-4"
+        >
           {skillList.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={fadeUp}
               className="
                 border border-black/10 dark:border-white/10 
                 px-8 py-3 rounded-full 
@@ -45,10 +60,10 @@ const Skills = () => {
               "
             >
               {skill}
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
