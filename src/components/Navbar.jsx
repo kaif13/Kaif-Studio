@@ -19,7 +19,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
           href="#"
           className="font-heading font-bold text-2xl tracking-tight text-dark dark:text-light"
         >
-          Mohammad Kaif
+          Kaif Web Studio
         </a>
 
         {/* Desktop Links & Toggles */}

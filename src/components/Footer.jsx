@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-2">
         {/* Main Copyright */}
         <p className="text-sm text-dark dark:text-light font-heading font-medium tracking-wide text-center">
-          © 2025 Mohammad Kaif. All rights reserved.
+          © 2025 Kaif Web Studio. All rights reserved.
         </p>
 
         {/* Subtle Subtext */}
