@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import Faq from "./components/FAQ";
-import WhatsApp from "./components/whatsapp";
+import WhatsApp from "./components/WhatsApp";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
