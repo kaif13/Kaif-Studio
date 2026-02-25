@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Services from "./components/Services";
 import Process from "./components/Process";
 import Faq from "./components/FAQ";
+import WhatsApp from "./components/whatsapp";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -48,6 +49,7 @@ function App() {
         {/* <Testimonials /> */}
         <Faq />
         <Contact />
+        <WhatsApp />
       </main>
 
       <Footer />

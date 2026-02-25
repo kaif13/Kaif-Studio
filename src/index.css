@@ -42,3 +42,27 @@
     background-size: 24px 24px;
   }
 }
+@keyframes wiggle-interval {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  15% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  } /* Stays still for the rest of the 3s */
+}
+
+.animate-wiggle-3s {
+  animation: wiggle-interval 3s infinite ease-in-out;
+}
