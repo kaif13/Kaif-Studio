@@ -64,14 +64,14 @@ const Hero = () => {
                 bg-brand text-white border border-brand
                 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]
                 hover:scale-105
-                transition-all duration-300
+                transition-all duration-500 ease-premium smooth-hover
                 flex items-center gap-2
               "
             >
               Get a free website review
               <ArrowRight
                 size={18}
-                className="group-hover:translate-x-1 transition-transform"
+                className="group-hover:translate-x-1 transition-transform duration-300 ease-premium"
               />
             </a>
 
@@ -83,7 +83,7 @@ const Hero = () => {
                 text-light dark:text-dark 
                 px-8 py-4 rounded-full 
                 font-bold font-heading text-sm uppercase tracking-widest
-                transition-transform duration-300 hover:scale-105
+                transition-transform duration-500 ease-premium hover:scale-105 smooth-hover
                 flex items-center gap-2
               "
             >
@@ -110,7 +110,7 @@ const Hero = () => {
             className="
       relative w-full max-w-md bg-[#1e1e1e] rounded-xl overflow-hidden 
       border border-white/10 shadow-2xl shadow-brand/20
-      transform transition-transform duration-500 
+      transform-gpu transition-transform duration-700 ease-premium smooth-hover
       group-hover:rotate-1 group-hover:scale-[1.02]
     "
           >

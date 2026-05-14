@@ -68,7 +68,7 @@ const Services = () => {
               group flex flex-col relative
               border border-black/10 dark:border-white/10 rounded-xl p-4
               bg-light dark:bg-dark
-              transition-all duration-500 ease-out
+              transition-all duration-700 ease-premium smooth-hover
               hover:shadow-[0_0_20px_5px_rgba(0,0,0,0.05)] 
               dark:hover:shadow-[0_0_20px_5px_rgba(255,255,255,0.05)]
               hover:-translate-y-2 
@@ -79,7 +79,9 @@ const Services = () => {
               <img
                 src={service.img}
                 alt={service.title}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-premium transform-gpu group-hover:scale-105"
               />
             </div>
 
@@ -111,7 +113,7 @@ const Services = () => {
                   w-full block text-center py-3 rounded-lg 
                   bg-brand text-white 
                   hover:opacity-90 hover:shadow-lg hover:shadow-brand/20 
-                  transition-all font-heading text-xs uppercase tracking-widest font-bold
+                  transition-all duration-300 ease-premium font-heading text-xs uppercase tracking-widest font-bold
                 "
               >
                 Start Project

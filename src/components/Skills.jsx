@@ -50,7 +50,7 @@ const Skills = () => {
                 cursor-default 
                 
                 /* THE SMOOTH ANIMATION CLASSES */
-                transition-all duration-700 ease-out transform-gpu
+                transition-all duration-700 ease-premium transform-gpu smooth-hover
                 
                 /* Hover Effects */
                 hover:bg-dark hover:text-light 

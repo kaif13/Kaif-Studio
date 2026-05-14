@@ -31,6 +31,13 @@ const projects = [
     img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop",
     link: "https://blinkgame.netlify.app/",
   },
+  {
+    title: "Qamar Noir",
+    cat: "Business Landing Page",
+    desc: "Built a cinematic luxury cafe website to elevate brand presence and attract customers through immersive visuals and a responsive modern UI.",
+    img: "https://images.unsplash.com/photo-1565650839149-2c48a094196c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNhZmUlMjBpbnRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D",
+    link: "https://qamarnoircafe.netlify.app/",
+  },
 ];
 
 const Projects = () => {
@@ -69,7 +76,7 @@ const Projects = () => {
               group cursor-pointer relative
               border border-black/10 dark:border-white/10 rounded-xl p-4
               bg-light dark:bg-dark
-              transition-all duration-500 ease-out
+              transition-all duration-700 ease-premium smooth-hover
               block
               hover:shadow-[0_0_20px_5px_rgba(0,0,0,0.1),0_0_80px_15px_rgba(0,0,0,0.1)] 
               dark:hover:shadow-[0_0_20px_5px_rgba(255,255,255,0.15),0_0_80px_15px_rgba(255,255,255,0.1)]
@@ -83,10 +90,12 @@ const Projects = () => {
               <img
                 src={project.img}
                 alt={project.title}
+                loading="lazy"
+                decoding="async"
                 className="
                   w-full h-full object-cover 
                   grayscale group-hover:grayscale-0 
-                  transition-all duration-700 ease-out 
+                  transition-all duration-700 ease-premium 
                   transform group-hover:scale-105
                 "
               />

@@ -63,14 +63,14 @@ const Process = () => {
         {steps.map((step, index) => (
           <motion.div
             key={index}
-            // variants={fadeUp}
-            className="group relative flex flex-col items-start p-6 rounded-xl bg-light dark:bg-dark border border-black/10 dark:border-white/10 transition-all duration-500 hover:-translate-y-2 hover:border-black/30 dark:hover:border-white/30 hover:shadow-xl"
+            variants={fadeUp}
+            className="group relative flex flex-col items-start p-6 rounded-xl bg-light dark:bg-dark border border-black/10 dark:border-white/10 transition-all duration-700 ease-premium smooth-hover hover:-translate-y-2 hover:border-black/30 dark:hover:border-white/30 hover:shadow-xl"
           >
-            <div className="absolute -top-4 -right-4 text-6xl font-black text-black/5 dark:text-white/5 font-heading group-hover:text-black/10 dark:group-hover:text-white/10 transition-colors select-none">
+            <div className="absolute -top-4 -right-4 text-6xl font-black text-black/5 dark:text-white/5 font-heading group-hover:text-black/10 dark:group-hover:text-white/10 transition-colors duration-500 ease-premium select-none">
               {step.id}
             </div>
 
-            <div className="w-12 h-12 mb-6 rounded-lg flex items-center justify-center bg-black/5 dark:bg-white/5 text-dark dark:text-light group-hover:bg-dark group-hover:text-light dark:group-hover:bg-light dark:group-hover:text-dark transition-colors duration-300">
+            <div className="w-12 h-12 mb-6 rounded-lg flex items-center justify-center bg-black/5 dark:bg-white/5 text-dark dark:text-light group-hover:bg-dark group-hover:text-light dark:group-hover:bg-light dark:group-hover:text-dark transition-all duration-500 ease-premium group-hover:scale-105">
               {step.icon}
             </div>
 

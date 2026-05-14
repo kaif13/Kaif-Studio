@@ -69,7 +69,7 @@ const FAQ = () => {
             key={index}
             variants={fadeUp}
             className={`
-              border rounded-2xl overflow-hidden transition-all duration-300
+              border rounded-2xl overflow-hidden transition-all duration-500 ease-premium
               ${
                 openIndex === index
                   ? "border-brand bg-brand/5 dark:bg-brand/5"
@@ -91,7 +91,7 @@ const FAQ = () => {
                 {faq.question}
               </span>
               <span
-                className={`transition-transform duration-300 ${
+                className={`transition-transform duration-500 ease-premium ${
                   openIndex === index ? "rotate-180 text-brand" : "text-gray"
                 }`}
               >
@@ -101,7 +101,7 @@ const FAQ = () => {
 
             <div
               className={`
-                px-6 overflow-hidden transition-all duration-300 ease-in-out
+                px-6 overflow-hidden transition-all duration-500 ease-premium
                 ${
                   openIndex === index
                     ? "max-h-40 pb-6 opacity-100"
