@@ -1,27 +1,27 @@
 import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Github, Linkedin, Instagram, CheckCircle } from "lucide-react";
 import { fadeUp } from "../../animations";
 
 // --- POPUP COMPONENT ---
 const SuccessPopup = ({ onClose }) => (
-  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm transition-opacity">
-    <div className="bg-light dark:bg-dark border border-black/10 dark:border-white/10 p-8 rounded-2xl shadow-2xl max-w-sm w-full">
-      <div className="flex flex-col items-center text-center space-y-4">
-        <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm transition-opacity">
+    <div className="w-full max-w-sm rounded-2xl border border-black/10 bg-white p-8 shadow-2xl dark:border-white/10 dark:bg-[#0b0b0b]">
+      <div className="flex flex-col items-center space-y-4 text-center">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
           <CheckCircle size={32} />
         </div>
-        <h3 className="text-2xl font-heading font-bold text-dark dark:text-light">
+        <h3 className="font-heading text-2xl font-bold text-dark dark:text-light">
           Message Sent Successfully
         </h3>
-        <p className="text-gray text-sm">
-          Thanks for reaching out. I’ll review your message and reply to your
+        <p className="text-sm text-gray">
+          Thanks for reaching out. I will review your message and reply to your
           email as soon as possible.
         </p>
         <button
           onClick={onClose}
-          className="mt-4 w-full py-3 bg-dark dark:bg-light text-light dark:text-dark font-bold rounded-md hover:opacity-90 transition-opacity uppercase tracking-widest text-xs"
+          className="mt-4 w-full rounded-full bg-dark py-3 text-xs font-bold uppercase tracking-widest text-light transition-opacity hover:opacity-90 dark:bg-light dark:text-dark"
         >
           Close
         </button>
@@ -57,36 +57,40 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 max-w-7xl mx-auto relative">
+    <section id="contact" className="relative px-6 py-14 md:py-16">
       {showPopup && <SuccessPopup onClose={() => setShowPopup(false)} />}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-brand/10 to-transparent" />
+
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         {/* LEFT SIDE */}
-        <motion.div
+        <Motion.div
           variants={fadeUp}
-          initial="hidden"
+          initial="visible"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-col justify-between"
+          className="flex flex-col justify-between rounded-2xl border border-black/10 bg-dark p-8 text-light shadow-2xl shadow-black/20 dark:border-white/10 dark:bg-white dark:text-dark md:p-10"
         >
           <div>
-            <h2 className="font-heading font-bold text-5xl md:text-7xl mb-8 text-dark dark:text-light">
-              Start your <br />
-              <span className="text-gray/50">project.</span>
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+              Book a free website review
+            </p>
+            <h2 className="mb-8 font-heading text-5xl font-black leading-none md:text-6xl">
+              Let's make your business look premium online.
             </h2>
 
-            <p className="text-lg md:text-xl text-gray mb-12 font-body leading-relaxed max-w-md">
-              Tell me about your business and what you’re looking to build. I’ll
-              review your request and let you know the next steps clearly.
+            <p className="mb-10 max-w-md text-base leading-8 text-white/65 dark:text-black/65 md:text-lg">
+              Tell me about your business and what you are looking to build. I
+              will review your request and suggest the clearest next step.
             </p>
 
-            <div className="space-y-2 mb-10">
-              <p className="text-xs uppercase font-bold text-gray">
-                Or email me directly
+            <div className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-5 dark:border-black/10 dark:bg-black/5">
+              <p className="text-xs font-bold uppercase tracking-widest text-white/45 dark:text-black/45">
+                Direct email
               </p>
               <a
                 href="mailto:mohamaddkaif0602@gmail.com"
-                className="text-2xl font-heading font-medium text-dark dark:text-light hover:underline decoration-1 underline-offset-4"
+                className="mt-2 block break-all font-heading text-xl font-bold hover:underline md:text-2xl"
               >
                 mohamaddkaif0602@gmail.com
               </a>
@@ -94,90 +98,99 @@ const Contact = () => {
           </div>
 
           <div>
-            <p className="text-xs uppercase font-bold text-gray mb-4">
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-white/45 dark:text-black/45">
               Connect with me
             </p>
             <div className="flex gap-4">
               <a
                 href="https://github.com/kaif13"
-                className="p-3 border border-black/10 dark:border-white/10 rounded-full text-dark dark:text-light hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark transition-all"
+                className="rounded-full border border-white/10 p-3 transition-all hover:-translate-y-1 hover:bg-white hover:text-dark dark:border-black/10 dark:hover:bg-dark dark:hover:text-light"
               >
                 <Github size={20} />
               </a>
               <a
                 href="https://www.linkedin.com/in/mohammadkaif1311/"
-                className="p-3 border border-black/10 dark:border-white/10 rounded-full text-dark dark:text-light hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark transition-all"
+                className="rounded-full border border-white/10 p-3 transition-all hover:-translate-y-1 hover:bg-white hover:text-dark dark:border-black/10 dark:hover:bg-dark dark:hover:text-light"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="https://www.instagram.com/__mohammad_kaif/?hl=en"
-                className="p-3 border border-black/10 dark:border-white/10 rounded-full text-dark dark:text-light hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark transition-all"
+                className="rounded-full border border-white/10 p-3 transition-all hover:-translate-y-1 hover:bg-white hover:text-dark dark:border-black/10 dark:hover:bg-dark dark:hover:text-light"
               >
                 <Instagram size={20} />
               </a>
             </div>
           </div>
-        </motion.div>
+        </Motion.div>
 
         {/* RIGHT SIDE: FORM */}
-        <motion.div
+        <Motion.div
           variants={fadeUp}
-          initial="hidden"
+          initial="visible"
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="bg-light dark:bg-dark border border-black/10 dark:border-white/10 p-8 rounded-2xl h-fit"
+          className="h-fit rounded-2xl border border-black/10 bg-white p-6 shadow-2xl shadow-black/10 dark:border-white/10 dark:bg-[#0b0b0b] md:p-8"
         >
+          <div className="mb-8">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand">
+              Project enquiry
+            </p>
+            <h3 className="mt-3 font-heading text-3xl font-black text-dark dark:text-light">
+              Share the essentials. I will take it from there.
+            </h3>
+          </div>
+
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
             <div>
-              <label className="text-xs uppercase font-bold text-gray mb-2 block">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray">
                 Name
               </label>
               <input
                 type="text"
                 name="user_name"
                 required
-                className="w-full bg-transparent border-b border-black/20 dark:border-white/20 py-3 text-lg text-dark dark:text-light focus:outline-none focus:border-dark dark:focus:border-light transition-colors"
+                className="w-full rounded-2xl border border-black/10 bg-white/70 px-5 py-4 text-base text-dark outline-none transition-all focus:border-brand focus:ring-4 focus:ring-brand/10 dark:border-white/10 dark:bg-white/5 dark:text-light"
                 placeholder="Your full name"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase font-bold text-gray mb-2 block">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray">
                 Email
               </label>
               <input
                 type="email"
                 name="user_email"
                 required
-                className="w-full bg-transparent border-b border-black/20 dark:border-white/20 py-3 text-lg text-dark dark:text-light focus:outline-none focus:border-dark dark:focus:border-light transition-colors"
+                className="w-full rounded-2xl border border-black/10 bg-white/70 px-5 py-4 text-base text-dark outline-none transition-all focus:border-brand focus:ring-4 focus:ring-brand/10 dark:border-white/10 dark:bg-white/5 dark:text-light"
                 placeholder="Your email address"
               />
             </div>
 
             <div>
-              <label className="text-xs uppercase font-bold text-gray mb-2 block">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-gray">
                 Project Details
               </label>
               <textarea
                 name="message"
                 rows="4"
                 required
-                className="w-full bg-transparent border-b border-black/20 dark:border-white/20 py-3 text-lg text-dark dark:text-light focus:outline-none focus:border-dark dark:focus:border-light transition-colors resize-none"
-                placeholder="Briefly describe your business and what you need help with"
+                className="w-full resize-none rounded-2xl border border-black/10 bg-white/70 px-5 py-4 text-base text-dark outline-none transition-all focus:border-brand focus:ring-4 focus:ring-brand/10 dark:border-white/10 dark:bg-white/5 dark:text-light"
+                placeholder="Tell me your business type, website goal, and timeline"
               ></textarea>
             </div>
 
             <button
               type="submit"
               disabled={isSending}
-              className="w-full py-4 bg-dark dark:bg-light text-light dark:text-dark font-bold rounded-md hover:opacity-90 transition-opacity uppercase tracking-widest text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full rounded-full bg-brand py-4 text-sm font-bold uppercase tracking-widest text-white shadow-xl shadow-brand/25 transition-all duration-500 hover:-translate-y-1 hover:shadow-brand/40 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              {isSending ? "Sending..." : "Request a response"}
+              {isSending ? "Sending..." : "Request Website Review"}
             </button>
           </form>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

@@ -1,127 +1,206 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { Check, Gem, Globe2, Store, Utensils, Wand2 } from "lucide-react";
+import { motion as Motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../animations";
 
 const services = [
+  "Business Website",
+  "Landing Page",
+  "Portfolio Website",
+  "Cafe / Restaurant Website",
+  "Real Estate Website",
+  "Jewellery / Luxury Brand Website",
+  "Website Redesign",
+];
+
+const pricing = [
   {
-    title: "Landing Page for Businesses",
-    timeline: "2–3 Days",
-    price: "Starting at $149",
-    desc: "A focused one-page website designed to convert visitors into inquiries through clear messaging, fast load speed, and strong call-to-action placement.",
-    img: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2000&auto=format&fit=crop",
+    title: "Starter Website",
+    price: "$199",
+    desc: "A polished one-page presence for new businesses that need to look credible fast.",
+    features: ["1-page website", "Mobile responsive", "CTA sections", "Basic SEO structure"],
   },
   {
-    title: "Service Business Website",
-    timeline: "1–2 Weeks",
-    price: "Starting at $499",
-    desc: "A professional multi-page website for service-based businesses to present services clearly, build trust, and make it easy for customers to get in touch.",
-    img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop",
+    title: "Business Website",
+    price: "$399",
+    desc: "A complete service-business website built to explain, build trust, and generate enquiries.",
+    featured: true,
+    features: [
+      "Up to 5 sections/pages",
+      "Premium responsive UI",
+      "WhatsApp/contact CTA",
+      "Project-ready launch support",
+    ],
   },
   {
-    title: "Business Website Redesign",
-    timeline: "1–2 Weeks",
-    price: "Starting at $599",
-    desc: "Redesign an outdated or slow website with a modern layout, improved user experience, and better structure to increase engagement and inquiries.",
-    img: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2000&auto=format&fit=crop",
-  },
-  {
-    title: "Website Updates & Fixes",
-    timeline: "Flexible",
-    price: "$12 / hour",
-    desc: "Small fixes, design updates, performance improvements, or help with existing websites without committing to a full redesign.",
-    img: "https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=2000&auto=format&fit=crop",
+    title: "Premium Website",
+    price: "$699+",
+    desc: "A more elevated website for luxury brands, real estate, hotels, and richer showcases.",
+    features: [
+      "Custom visual direction",
+      "Advanced sections",
+      "Case-study style layout",
+      "Priority polish and launch",
+    ],
   },
 ];
 
+const serviceIcons = [<Globe2 />, <Wand2 />, <Store />, <Utensils />, <Gem />];
+
 const Services = () => {
   return (
-    <section
-      id="services"
-      className="py-20 px-6 max-w-7xl mx-auto transition-colors duration-300"
-    >
-      {/* Heading */}
-      <motion.div
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="flex justify-center items-center mb-12"
-      >
-        <h2 className="font-heading font-bold text-3xl text-dark dark:text-light">
-          Services for Businesses
-        </h2>
-      </motion.div>
+    <section id="services" className="px-4 py-12 min-[390px]:px-5 md:px-6 md:py-16">
+      <div className="mx-auto max-w-7xl">
+        <Motion.div
+          variants={fadeUp}
+          initial="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-8 max-w-3xl md:mb-10"
+        >
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+            Services and pricing
+          </p>
+          <h2 className="font-heading text-3xl font-black leading-tight text-dark dark:text-light min-[390px]:text-4xl md:text-5xl">
+            Premium websites for businesses that need to be taken seriously.
+          </h2>
+        </Motion.div>
 
-      {/* Services Grid */}
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-      >
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            variants={fadeUp}
-            className="
-              group flex flex-col relative
-              border border-black/10 dark:border-white/10 rounded-xl p-4
-              bg-light dark:bg-dark
-              transition-all duration-700 ease-premium smooth-hover
-              hover:shadow-[0_0_20px_5px_rgba(0,0,0,0.05)] 
-              dark:hover:shadow-[0_0_20px_5px_rgba(255,255,255,0.05)]
-              hover:-translate-y-2 
-              hover:border-black/20 dark:hover:border-white/20
-            "
-          >
-            <div className="overflow-hidden w-full h-48 rounded-lg mb-5 relative bg-gray/10">
-              <img
-                src={service.img}
-                alt={service.title}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-premium transform-gpu group-hover:scale-105"
-              />
-            </div>
-
-            <div className="flex flex-col flex-grow gap-4">
-              <div className="flex justify-between items-start w-full">
-                <div className="pr-4">
-                  <h3 className="text-lg font-heading font-bold text-dark dark:text-light leading-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-[10px] font-mono uppercase tracking-wider text-gray mt-1">
-                    {service.timeline}
-                  </p>
-                </div>
-
-                <div className="flex-shrink-0 bg-black/5 dark:bg-white/10 px-3 py-1 rounded-md border border-black/5 dark:border-white/5">
-                  <span className="font-mono text-sm font-bold text-dark dark:text-light">
-                    {service.price}
-                  </span>
-                </div>
+        <Motion.div
+          variants={staggerContainer}
+          initial="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-10 grid grid-cols-1 gap-3 min-[390px]:grid-cols-2 md:mb-12 md:gap-4 lg:grid-cols-4"
+        >
+          {services.map((service, index) => (
+            <Motion.div
+              key={service}
+              variants={fadeUp}
+              className="group rounded-2xl border border-black/10 bg-white p-4 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-brand/30 hover:shadow-xl hover:shadow-brand/10 dark:border-white/10 dark:bg-[#0b0b0b] md:p-5"
+            >
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-dark text-light transition-all duration-500 group-hover:bg-brand dark:bg-light dark:text-dark md:mb-5 md:h-11 md:w-11">
+                {React.cloneElement(serviceIcons[index % serviceIcons.length], {
+                  size: 19,
+                })}
               </div>
+              <h3 className="font-heading text-base font-bold leading-snug text-dark dark:text-light md:text-lg">
+                {service}
+              </h3>
+            </Motion.div>
+          ))}
+        </Motion.div>
 
-              <p className="text-sm text-gray/80 dark:text-gray leading-relaxed line-clamp-3 flex-grow">
-                {service.desc}
+        <Motion.div
+          variants={fadeUp}
+          initial="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-7 flex flex-col justify-between gap-4 md:mb-8 md:flex-row md:items-end"
+        >
+          <div>
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+              Pricing in USD
+            </p>
+            <h3 className="font-heading text-2xl font-black leading-tight text-dark dark:text-light min-[390px]:text-3xl md:text-4xl">
+              Simple packages for serious business websites.
+            </h3>
+          </div>
+          <p className="max-w-md text-[15px] leading-7 text-gray dark:text-white/65">
+            Choose a clear starting point, then we can adjust scope around your
+            business goals.
+          </p>
+        </Motion.div>
+
+        <Motion.div
+          variants={staggerContainer}
+          initial="visible"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 gap-4 md:gap-6 lg:grid-cols-3"
+        >
+          {pricing.map((plan) => (
+            <Motion.div
+              key={plan.title}
+              variants={fadeUp}
+              className={`relative overflow-hidden rounded-2xl border p-5 shadow-sm transition-all duration-500 hover:-translate-y-2 md:p-6 ${
+                plan.featured
+                  ? "border-brand/50 bg-dark text-light shadow-2xl shadow-brand/20 dark:bg-light dark:text-dark"
+                  : "border-black/10 bg-white text-dark hover:border-brand/30 hover:shadow-2xl hover:shadow-brand/10 dark:border-white/10 dark:bg-[#0b0b0b] dark:text-light"
+              }`}
+            >
+              {plan.featured && (
+                <div className="absolute right-5 top-5 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+                  Most chosen
+                </div>
+              )}
+              <p
+                className={`text-xs font-bold uppercase tracking-[0.24em] ${
+                  plan.featured ? "text-brand" : "text-brand"
+                }`}
+              >
+                {plan.title}
               </p>
+              <div className="mt-6 flex items-end gap-2">
+                <span className="font-heading text-4xl font-black md:text-5xl">
+                  {plan.price}
+                </span>
+                <span
+                  className={`pb-2 text-sm ${
+                    plan.featured
+                      ? "text-white/55 dark:text-black/55"
+                      : "text-gray"
+                  }`}
+                >
+                  fixed scope
+                </span>
+              </div>
+              <p
+                className={`mt-4 text-[15px] leading-7 md:mt-5 ${
+                  plan.featured
+                    ? "text-white/65 dark:text-black/65"
+                    : "text-gray dark:text-white/60"
+                }`}
+              >
+                {plan.desc}
+              </p>
+
+              <div className="mt-5 space-y-2.5 md:mt-7 md:space-y-3">
+                {plan.features.map((feature) => (
+                  <div key={feature} className="flex items-center gap-3">
+                    <span
+                      className={`flex h-6 w-6 items-center justify-center rounded-full ${
+                        plan.featured
+                          ? "bg-white/10 text-brand dark:bg-black/10"
+                          : "bg-brand/10 text-brand"
+                      }`}
+                    >
+                      <Check size={15} />
+                    </span>
+                    <span className="text-sm font-medium">{feature}</span>
+                  </div>
+                ))}
+              </div>
 
               <a
                 href="#contact"
-                className="
-                  w-full block text-center py-3 rounded-lg 
-                  bg-brand text-white 
-                  hover:opacity-90 hover:shadow-lg hover:shadow-brand/20 
-                  transition-all duration-300 ease-premium font-heading text-xs uppercase tracking-widest font-bold
-                "
+                className={`mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-full px-5 py-3.5 text-sm font-bold uppercase tracking-widest transition-all duration-500 hover:-translate-y-1 md:mt-8 md:py-4 ${
+                  plan.featured
+                    ? "bg-light text-dark shadow-xl shadow-white/10 dark:bg-dark dark:text-light"
+                    : "bg-dark text-light shadow-xl shadow-black/10 hover:shadow-brand/20 dark:bg-light dark:text-dark"
+                }`}
               >
-                Start Project
+                Start with {plan.title}
               </a>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+            </Motion.div>
+          ))}
+        </Motion.div>
+
+        <p className="mt-8 text-center text-sm text-gray dark:text-white/55">
+          Every plan is structured to improve brand trust and make customer
+          enquiries easier.
+        </p>
+      </div>
     </section>
   );
 };

@@ -1,17 +1,40 @@
 import React from "react";
 
 const Footer = () => {
-  return (
-    <footer className="py-10 border-t border-black/5 dark:border-white/10 bg-light dark:bg-dark transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center gap-2">
-        {/* Main Copyright */}
-        <p className="text-sm text-dark dark:text-light font-heading font-medium tracking-wide text-center">
-          © 2025 Kaif Web Studio. All rights reserved.
-        </p>
+  const links = [
+    { name: "About", href: "#studio-about" },
+    { name: "Work", href: "#work" },
+    { name: "Services", href: "#services" },
+    { name: "Contact", href: "#contact" },
+  ];
 
-        {/* Subtle Subtext */}
-        <p className="text-xs text-gray font-mono uppercase tracking-widest opacity-60 text-center">
-          Designed and built for business use
+  return (
+    <footer className="border-t border-black/10 bg-white/70 px-6 py-10 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-dark/70">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p className="font-heading text-2xl font-black text-dark dark:text-light">
+            Kaif Web Studio
+          </p>
+          <p className="mt-2 max-w-md text-sm text-gray dark:text-white/55">
+            Premium websites for service businesses, luxury brands, and modern
+            local companies.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-5 text-xs font-bold uppercase tracking-widest text-dark/65 dark:text-light/65">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="transition-colors hover:text-brand"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        <p className="text-xs font-bold uppercase tracking-widest text-gray">
+          Copyright 2026
         </p>
       </div>
     </footer>

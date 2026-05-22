@@ -1,85 +1,93 @@
 import React from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 
 const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
   const handleLinkClick = () => setIsMenuOpen(false);
 
   const navLinks = [
-    { name: "About", href: "#about" },
     { name: "Work", href: "#work" },
     { name: "Services", href: "#services" },
+    { name: "About", href: "#studio-about" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-light/90 dark:bg-dark/90 backdrop-blur-md z-50 border-b border-black/5 dark:border-white/10 transition-colors duration-500 ease-premium">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-        {/* Brand */}
+    <header className="fixed inset-x-0 top-3 z-50 px-3 min-[390px]:px-4 md:top-4">
+      <nav className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between rounded-full border border-black/10 bg-white/82 px-2.5 pl-4 shadow-2xl shadow-black/10 backdrop-blur-2xl transition-colors duration-500 dark:border-white/10 dark:bg-[#0b0b0b]/82 min-[390px]:pl-5 md:h-16 md:px-3">
         <a
-          href="#"
-          className="font-heading font-bold text-2xl tracking-tight text-dark dark:text-light"
+          href="#home"
+          onClick={handleLinkClick}
+          className="flex items-center gap-3"
+          aria-label="Kaif Web Studio home"
         >
-          Kaif Web Studio
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-dark font-heading text-sm font-black text-light dark:bg-light dark:text-dark md:h-9 md:w-9">
+            K
+          </span>
+          <span className="font-heading text-base font-black tracking-tight text-dark dark:text-light min-[390px]:text-lg">
+            Kaif Web Studio
+          </span>
         </a>
 
-        {/* Desktop Links & Toggles */}
-        <div className="flex items-center gap-8">
-          {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-widest text-dark dark:text-light">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:opacity-50 transition-opacity duration-300 ease-premium"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-full border border-black/10 dark:border-white/10 text-dark dark:text-light hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 ease-premium hover:scale-105"
-          >
-            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-dark dark:text-light transition-transform duration-300 ease-premium hover:scale-105"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Dropdown */}
-      {isMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-light dark:bg-dark border-b border-black/10 dark:border-white/10 p-6 flex flex-col gap-6 md:hidden shadow-xl animate-fade-in-down">
+        <div className="hidden items-center rounded-full border border-black/10 bg-black/[0.03] p-1 text-xs font-bold uppercase tracking-widest text-dark/65 dark:border-white/10 dark:bg-white/[0.04] dark:text-light/65 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              onClick={handleLinkClick}
-              className="text-xl font-heading font-bold text-dark dark:text-light hover:translate-x-2 transition-transform duration-300 ease-premium"
+              className="rounded-full px-4 py-2.5 transition-all duration-300 hover:bg-white hover:text-dark hover:shadow-sm dark:hover:bg-white/10 dark:hover:text-light"
             >
               {link.name}
             </a>
           ))}
+        </div>
 
-          {/* Mobile CTA */}
+        <div className="flex items-center gap-2.5 md:gap-2">
           <a
             href="#contact"
-            onClick={handleLinkClick}
-            className="mt-4 text-center py-3 w-full bg-brand text-white rounded-lg uppercase tracking-widest text-xs font-bold transition-all duration-300 ease-premium hover:scale-[1.01]"
+            className="hidden rounded-full bg-brand px-5 py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand/35 sm:inline-flex"
           >
-            Get a free website review
+            Free Review
           </a>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-dark transition-all duration-300 hover:bg-dark hover:text-light dark:border-white/10 dark:bg-white/5 dark:text-light dark:hover:bg-light dark:hover:text-dark md:h-11 md:w-11"
+            aria-label="Toggle theme"
+          >
+            {darkMode ? <Sun size={19} /> : <Moon size={19} />}
+          </button>
+          <button
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white text-dark transition-all duration-300 dark:border-white/10 dark:bg-white/5 dark:text-light md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </nav>
+
+      {isMenuOpen && (
+        <div className="mx-auto mt-3 max-w-6xl rounded-3xl border border-black/10 bg-white/95 p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl dark:border-white/10 dark:bg-[#0b0b0b]/95 md:hidden">
+          <div className="grid gap-2.5">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={handleLinkClick}
+                className="min-h-12 rounded-2xl px-4 py-3 font-heading text-lg font-bold text-dark transition-colors hover:bg-black/5 dark:text-light dark:hover:bg-white/5"
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={handleLinkClick}
+              className="mt-2 flex min-h-12 items-center justify-center rounded-full bg-brand px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-white"
+            >
+              Book a free website review
+            </a>
+          </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 

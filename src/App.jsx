@@ -6,20 +6,14 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Services from "./components/Services";
-import Process from "./components/Process";
-import Faq from "./components/FAQ";
+import About from "./components/About";
 import WhatsApp from "./components/WhatsApp";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches,
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // Check system preference on load
-  useEffect(() => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setDarkMode(true);
-    }
-  }, []);
 
   // Toggle 'dark' class on HTML element
   useEffect(() => {
@@ -31,7 +25,7 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-light dark:bg-dark transition-colors duration-300">
+    <div className="bg-light text-dark transition-colors duration-300 dark:bg-dark dark:text-light">
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -44,9 +38,7 @@ function App() {
         <Skills />
         <Projects />
         <Services />
-        <Process />
-        {/* <Testimonials /> */}
-        <Faq />
+        <About />
         <Contact />
         <WhatsApp />
       </main>

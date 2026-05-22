@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { Search, PenTool, Code2, Rocket } from "lucide-react";
 import { fadeUp, staggerContainer } from "../../animations";
 
@@ -8,7 +8,7 @@ const steps = [
     id: "01",
     title: "Discovery",
     icon: <Search size={24} />,
-    desc: "We start with a short call to understand your business, goals, and what’s currently not working. No assumptions, no wasted time.",
+    desc: "We start with a short call to understand your business, goals, and what is currently not working. No assumptions, no wasted time.",
   },
   {
     id: "02",
@@ -32,9 +32,9 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
       {/* Heading */}
-      <motion.div
+      <Motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -48,10 +48,10 @@ const Process = () => {
           A simple, transparent four-step process to take your website from idea
           to a live business asset.
         </p>
-      </motion.div>
+      </Motion.div>
 
       {/* Steps Grid */}
-      <motion.div
+      <Motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -61,7 +61,7 @@ const Process = () => {
         <div className="hidden lg:block absolute top-12 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/20 dark:via-white/20 to-transparent -z-10"></div>
 
         {steps.map((step, index) => (
-          <motion.div
+          <Motion.div
             key={index}
             variants={fadeUp}
             className="group relative flex flex-col items-start p-6 rounded-xl bg-light dark:bg-dark border border-black/10 dark:border-white/10 transition-all duration-700 ease-premium smooth-hover hover:-translate-y-2 hover:border-black/30 dark:hover:border-white/30 hover:shadow-xl"
@@ -81,9 +81,9 @@ const Process = () => {
             <p className="text-sm text-gray/80 dark:text-gray leading-relaxed">
               {step.desc}
             </p>
-          </motion.div>
+          </Motion.div>
         ))}
-      </motion.div>
+      </Motion.div>
     </section>
   );
 };

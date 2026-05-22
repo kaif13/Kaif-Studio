@@ -9,16 +9,10 @@ export default {
         body: ['"Plus Jakarta Sans"', '"Inter"', "sans-serif"],
       },
       colors: {
-        // 1. Off-Black & Off-White (Easier on the eyes, premium feel)
-        dark: "#050505",
-        light: "#FAFAFA",
-
-        // 2. The Professional Gray
-        gray: "#737373",
-
-        // 3. YOUR ACCENT COLOR (Electric Blue)
-        // Use this ONLY for buttons and important links
-        brand: "#2563EB",
+        dark: "#080A0F",
+        light: "#F7F8F4",
+        gray: "#6D706A",
+        brand: "#B8892E",
       },
     },
   },

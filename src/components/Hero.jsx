@@ -1,219 +1,150 @@
 import React from "react";
-import { ArrowRight, FileText } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { motion as Motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "../../animations";
+
+const stats = [
+  { value: "7+", label: "Business builds" },
+  { value: "1-2w", label: "Typical delivery" },
+  { value: "100%", label: "Mobile focused" },
+];
+
+const industries = ["Cafe", "Real Estate", "Salon", "Luxury Brand"];
 
 const Hero = () => {
   return (
     <section
-      id="about"
-      className="relative pt-28 pb-24 px-6 max-w-7xl mx-auto min-h-[85vh] flex items-center overflow-hidden"
+      id="home"
+      className="relative isolate overflow-hidden px-4 pb-10 pt-24 min-[390px]:px-5 md:px-6 md:pb-14 md:pt-32"
     >
-      <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[100px] opacity-50"></div>
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_8%,rgba(184,137,46,0.16),transparent_34%),linear-gradient(180deg,rgba(255,255,250,0.92),rgba(247,248,244,0.98))] dark:bg-[radial-gradient(circle_at_18%_8%,rgba(184,137,46,0.2),transparent_34%),linear-gradient(180deg,rgba(8,10,15,0.92),rgba(8,10,15,1))]" />
+      <div className="absolute right-0 top-20 -z-10 h-64 w-64 rounded-full bg-brand/20 blur-[110px]" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        {/* LEFT SIDE */}
-        <motion.div
+      <div className="mx-auto grid max-w-7xl items-center gap-7 md:gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:grid-cols-[1.02fr_0.98fr]">
+        <Motion.div
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-start z-10"
+          className="max-w-4xl"
         >
-          {/* Status Badge */}
-          <motion.div variants={fadeUp}>
-            <div className="inline-flex items-center gap-2 border border-black/5 dark:border-white/10 px-4 py-1.5 rounded-full mb-8 bg-light/50 dark:bg-dark/50 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-              </span>
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-dark dark:text-light">
-                Now accepting client projects
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Headline */}
-          <motion.h1
+          <Motion.div
             variants={fadeUp}
-            className="font-heading font-bold text-5xl md:text-7xl leading-[1.1] mb-6"
+            className="mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-dark shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-light md:mb-5 md:px-4 md:text-xs md:tracking-widest"
           >
-            <span className="text-black dark:text-white">Websites</span> <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-black/90 to-black/10 dark:from-white dark:to-white/10">
-              that help service businesses grow.
-            </span>
-          </motion.h1>
+            <span className="h-2 w-2 rounded-full bg-brand shadow-[0_0_18px_rgba(184,137,46,0.75)]" />
+            Available for premium website projects
+          </Motion.div>
 
-          {/* Description */}
-          <motion.p
+          <Motion.h1
             variants={fadeUp}
-            className="text-lg md:text-xl text-gray mb-10 leading-relaxed max-w-lg font-body"
+            className="max-w-5xl font-heading text-[2.45rem] font-black leading-[1.03] text-dark dark:text-light min-[390px]:text-[2.75rem] md:text-6xl xl:text-7xl"
           >
-            I'm{" "}
-            <span className="text-dark dark:text-light font-bold">Kaif</span>. I
-            design and build fast, modern websites that help service-based
-            businesses turn visitors into real inquiries and customers.
-          </motion.p>
+            Premium Websites That Make Your Business Look Expensive Online
+          </Motion.h1>
 
-          {/* Buttons */}
-          <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              className="
-                group px-8 py-4 rounded-full 
-                font-bold font-heading text-sm uppercase tracking-widest
-                bg-brand text-white border border-brand
-                hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]
-                hover:scale-105
-                transition-all duration-500 ease-premium smooth-hover
-                flex items-center gap-2
-              "
-            >
-              Get a free website review
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform duration-300 ease-premium"
-              />
-            </a>
+          <Motion.p
+            variants={fadeUp}
+            className="mt-4 max-w-2xl text-[1.05rem] leading-[2.05rem] text-dark/75 dark:text-zinc-300 md:mt-5 md:text-lg md:leading-8 md:text-gray md:dark:text-white/65"
+          >
+            I design and build modern, mobile-first websites for cafes, real
+            estate brands, jewellery stores, hotels, salons, gyms, and service
+            businesses that want more trust, enquiries, and online presence.
+          </Motion.p>
 
+          <Motion.div
+            variants={fadeUp}
+            className="mt-5 flex flex-col gap-3 sm:flex-row md:mt-7"
+          >
             <a
               href="#work"
-              className="
-                group relative overflow-hidden
-                bg-dark dark:bg-light 
-                text-light dark:text-dark 
-                px-8 py-4 rounded-full 
-                font-bold font-heading text-sm uppercase tracking-widest
-                transition-transform duration-500 ease-premium hover:scale-105 smooth-hover
-                flex items-center gap-2
-              "
+              className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-dark px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-light shadow-xl shadow-black/15 transition-all duration-500 hover:-translate-y-1 hover:shadow-brand/25 dark:bg-light dark:text-dark"
             >
-              <FileText size={18} />
-              <span>View work examples</span>
+              View My Work
+              <ArrowRight
+                size={17}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </a>
-          </motion.div>
-        </motion.div>
+            <a
+              href="#contact"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-dark shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-brand/40 dark:border-white/10 dark:bg-white/10 dark:text-light"
+            >
+              <Sparkles size={17} />
+              Book a Free Website Review
+            </a>
+          </Motion.div>
 
-        {/* RIGHT SIDE */}
-        {/* Right Side: The "Code Window" */}
-        <motion.div
+          <Motion.div
+            variants={fadeUp}
+            className="mt-6 grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/10 md:mt-7"
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-white/75 p-3.5 dark:bg-white/[0.04] min-[390px]:p-4"
+              >
+                <p className="font-heading text-xl font-black text-dark dark:text-light min-[390px]:text-2xl">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-[10px] font-semibold uppercase leading-4 tracking-[0.14em] text-gray min-[390px]:text-xs min-[390px]:tracking-widest">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </Motion.div>
+        </Motion.div>
+
+        <Motion.div
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          transition={{ delay: 0.25 }}
-          className="relative group flex justify-center md:justify-end perspective-1000"
+          transition={{ delay: 0.15 }}
+          className="relative"
         >
-          {/* The Blue Glow behind the code */}
-          <div className="absolute inset-0 bg-brand/20 blur-[100px] rounded-full -z-10"></div>
-
-          {/* The Code Window Card */}
-          <div
-            className="
-      relative w-full max-w-md bg-[#1e1e1e] rounded-xl overflow-hidden 
-      border border-white/10 shadow-2xl shadow-brand/20
-      transform-gpu transition-transform duration-700 ease-premium smooth-hover
-      group-hover:rotate-1 group-hover:scale-[1.02]
-    "
-          >
-            {/* Window Title Bar */}
-            <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <div className="ml-4 text-xs font-mono text-gray-400">
-                Hero.jsx
-              </div>
-            </div>
-
-            {/* The Code Content */}
-            <div className="p-6 font-mono text-sm leading-relaxed overflow-hidden">
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">1</span>
-                <span className="text-purple-400">const</span>{" "}
-                <span className="text-yellow-300 ml-2">Developer</span>{" "}
-                <span className="text-white">=</span>{" "}
-                <span className="text-white">()</span>{" "}
-                <span className="text-purple-400">=&gt;</span>{" "}
-                <span className="text-white">{`{`}</span>
+          <div className="rounded-[1.75rem] border border-black/10 bg-white/80 p-3 shadow-2xl shadow-black/10 backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
+            <div className="overflow-hidden rounded-[1.35rem] border border-black/10 bg-dark dark:border-white/10">
+              <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
+                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+                <span className="ml-auto text-[10px] font-bold uppercase tracking-widest text-white/45">
+                  kaif studio system
+                </span>
               </div>
 
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">2</span>
-                <span className="text-purple-400 ml-4">const</span>{" "}
-                <span className="text-blue-400 ml-2">skills</span>{" "}
-                <span className="text-white">=</span>{" "}
-                <span className="text-white">[</span>
-              </div>
+              <div className="grid gap-4 p-4 md:p-5">
+                <div className="relative overflow-hidden rounded-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1170&auto=format&fit=crop"
+                    alt="Premium website mockup"
+                    className="h-64 w-full object-cover md:h-80 lg:h-[390px]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-xs font-bold uppercase tracking-widest text-brand">
+                      Luxury website preview
+                    </p>
+                    <h2 className="mt-1 max-w-md font-heading text-2xl font-black text-white md:text-4xl">
+                      Trust-first design for serious clients.
+                    </h2>
+                  </div>
+                </div>
 
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">3</span>
-                <span className="text-green-400 ml-8">'Business Websites'</span>
-                <span className="text-white">,</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">4</span>
-                <span className="text-green-400 ml-8">'Landing Pages'</span>
-                <span className="text-white">,</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">5</span>
-                <span className="text-green-400 ml-8">'Website Redesigns'</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">6</span>
-                <span className="text-white ml-4">];</span>
-              </div>
-
-              <div className="flex mt-2">
-                <span className="text-gray-500 w-6 select-none">7</span>
-                <span className="text-purple-400 ml-4">return</span>{" "}
-                <span className="text-white">(</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">8</span>
-                <span className="text-pink-500 ml-8">&lt;Kaif</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">9</span>
-                <span className="text-blue-300 ml-12">problemSolver</span>
-                <span className="text-white">=</span>
-                <span className="text-blue-500">{`{true}`}</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">10</span>
-                <span className="text-blue-300 ml-12">hireable</span>
-                <span className="text-white">=</span>
-                <span className="text-blue-500">{`{true}`}</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">11</span>
-                <span className="text-pink-500 ml-8">/&gt;</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">12</span>
-                <span className="text-white">);</span>
-              </div>
-
-              <div className="flex">
-                <span className="text-gray-500 w-6 select-none">13</span>
-                <span className="text-white">{"}"};</span>
-              </div>
-
-              {/* Blinking Cursor */}
-              <div className="flex mt-2">
-                <span className="text-gray-500 w-6 select-none">14</span>
-                <span className="ml-4 w-2 h-5 bg-brand animate-pulse"></span>
+                <div className="grid grid-cols-2 gap-3">
+                  {industries.map((industry) => (
+                    <div
+                      key={industry}
+                      className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm font-bold text-white md:p-4"
+                    >
+                      <CheckCircle2 size={16} className="text-brand" />
+                      {industry}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );
