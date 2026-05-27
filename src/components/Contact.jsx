@@ -92,7 +92,7 @@ const Contact = () => {
                 href="mailto:mohamaddkaif0602@gmail.com"
                 className="mt-2 block break-all font-heading text-xl font-bold hover:underline md:text-2xl"
               >
-                mohamaddkaif0602@gmail.com
+                kaifwebstudio@gmail.com
               </a>
             </div>
           </div>
