@@ -32,7 +32,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="mx-auto max-w-7xl px-6 py-14 md:py-16">
+    <section className="mx-auto max-w-7xl px-6 py-14 md:py-16">
       <Motion.div
         variants={fadeUp}
         initial="hidden"

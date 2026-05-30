@@ -45,7 +45,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
         <div className="flex items-center gap-2.5 md:gap-2">
           <a
             href="#contact"
-            className="hidden rounded-full bg-brand px-5 py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand/35 sm:inline-flex"
+            className="hidden rounded-full bg-brand px-5 py-3 text-xs font-bold uppercase tracking-widest text-dark shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand/35 sm:inline-flex"
           >
             Get a Quote
           </a>
@@ -82,7 +82,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
             <a
               href="#contact"
               onClick={handleLinkClick}
-              className="mt-2 flex min-h-12 items-center justify-center rounded-full bg-brand px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-white"
+              className="mt-2 flex min-h-12 items-center justify-center rounded-full bg-brand px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-dark"
             >
               Get a free website quote
             </a>

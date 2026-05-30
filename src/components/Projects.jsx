@@ -56,7 +56,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="work" className="px-4 py-12 min-[390px]:px-5 md:px-6 md:py-16">
+    <section className="px-4 py-12 min-[390px]:px-5 md:px-6 md:py-16">
       <div className="mx-auto max-w-7xl">
         <Motion.div
           variants={fadeUp}
@@ -66,7 +66,7 @@ const Projects = () => {
           className="mb-10 grid gap-5 md:mb-12 md:gap-7 lg:mb-14 lg:grid-cols-[0.9fr_0.6fr] lg:items-end"
         >
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
               Selected work
             </p>
             <h2 className="max-w-3xl font-heading text-3xl font-black leading-tight text-dark dark:text-light min-[390px]:text-4xl md:text-5xl">
@@ -116,7 +116,7 @@ const Projects = () => {
                 <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-white/20 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-xl">
                   {project.cat}
                 </span>
-                <div className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-dark shadow-xl transition-all duration-500 group-hover:bg-brand group-hover:text-white">
+                <div className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-dark shadow-xl transition-all duration-500 group-hover:bg-brand group-hover:text-dark">
                   <ArrowUpRight size={19} />
                 </div>
               </div>
@@ -148,7 +148,7 @@ const Projects = () => {
                 </div>
 
                 <div className="mt-5 border-t border-black/10 pt-5 dark:border-white/10">
-                  <span className="inline-flex min-h-11 items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-brand/20 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-brand/35">
+                  <span className="inline-flex min-h-11 items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-black uppercase tracking-widest text-dark shadow-lg shadow-brand/20 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-brand/35">
                     View Live Project
                     <ArrowUpRight size={15} />
                   </span>

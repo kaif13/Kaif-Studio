@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative px-6 py-14 md:py-16">
+    <section className="relative px-6 py-14 md:py-16">
       {showPopup && <SuccessPopup onClose={() => setShowPopup(false)} />}
 
       <div className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-gradient-to-t from-brand/10 to-transparent" />
@@ -72,7 +72,7 @@ const Contact = () => {
           className="flex flex-col justify-between rounded-2xl border border-black/10 bg-dark p-8 text-light shadow-2xl shadow-black/20 dark:border-white/10 dark:bg-white dark:text-dark md:p-10"
         >
           <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#d8b45a] dark:text-[#8a5f12]">
               Book a free website review
             </p>
             <h2 className="mb-8 font-heading text-5xl font-black leading-none md:text-6xl">
@@ -85,7 +85,7 @@ const Contact = () => {
             </p>
 
             <div className="mb-10 rounded-2xl border border-white/10 bg-white/5 p-5 dark:border-black/10 dark:bg-black/5">
-              <p className="text-xs font-bold uppercase tracking-widest text-white/45 dark:text-black/45">
+              <p className="text-xs font-bold uppercase tracking-widest text-white/75 dark:text-black/75">
                 Direct email
               </p>
               <a
@@ -98,27 +98,30 @@ const Contact = () => {
           </div>
 
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-white/45 dark:text-black/45">
+            <p className="mb-4 text-xs font-bold uppercase tracking-widest text-white/75 dark:text-black/75">
               Connect with me
             </p>
             <div className="flex gap-4">
               <a
                 href="https://github.com/kaif13"
+                aria-label="Visit GitHub profile"
                 className="rounded-full border border-white/10 p-3 transition-all hover:-translate-y-1 hover:bg-white hover:text-dark dark:border-black/10 dark:hover:bg-dark dark:hover:text-light"
               >
-                <Github size={20} />
+                <Github size={20} aria-hidden="true" />
               </a>
               <a
                 href="https://www.linkedin.com/in/mohammadkaif1311/"
+                aria-label="Visit LinkedIn profile"
                 className="rounded-full border border-white/10 p-3 transition-all hover:-translate-y-1 hover:bg-white hover:text-dark dark:border-black/10 dark:hover:bg-dark dark:hover:text-light"
               >
-                <Linkedin size={20} />
+                <Linkedin size={20} aria-hidden="true" />
               </a>
               <a
                 href="https://www.instagram.com/__mohammad_kaif/?hl=en"
+                aria-label="Visit Instagram profile"
                 className="rounded-full border border-white/10 p-3 transition-all hover:-translate-y-1 hover:bg-white hover:text-dark dark:border-black/10 dark:hover:bg-dark dark:hover:text-light"
               >
-                <Instagram size={20} />
+                <Instagram size={20} aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -134,7 +137,7 @@ const Contact = () => {
           className="h-fit rounded-2xl border border-black/10 bg-white p-6 shadow-2xl shadow-black/10 dark:border-white/10 dark:bg-[#0b0b0b] md:p-8"
         >
           <div className="mb-8">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
               Project enquiry
             </p>
             <h3 className="mt-3 font-heading text-3xl font-black text-dark dark:text-light">
@@ -185,7 +188,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSending}
-              className="w-full rounded-full bg-brand py-4 text-sm font-bold uppercase tracking-widest text-white shadow-xl shadow-brand/25 transition-all duration-500 hover:-translate-y-1 hover:shadow-brand/40 disabled:cursor-not-allowed disabled:opacity-50"
+              className="w-full rounded-full bg-brand py-4 text-sm font-bold uppercase tracking-widest text-dark shadow-xl shadow-brand/25 transition-all duration-500 hover:-translate-y-1 hover:shadow-brand/40 disabled:cursor-not-allowed disabled:opacity-50"
             >
               {isSending ? "Sending..." : "Request Website Review"}
             </button>

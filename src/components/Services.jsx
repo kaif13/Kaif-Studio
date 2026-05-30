@@ -49,7 +49,7 @@ const serviceIcons = [<Globe2 />, <Wand2 />, <Store />, <Utensils />, <Gem />];
 
 const Services = () => {
   return (
-    <section id="services" className="px-4 py-12 min-[390px]:px-5 md:px-6 md:py-16">
+    <section className="px-4 py-12 min-[390px]:px-5 md:px-6 md:py-16">
       <div className="mx-auto max-w-7xl">
         <Motion.div
           variants={fadeUp}
@@ -58,7 +58,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="mb-8 max-w-3xl md:mb-10"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
             Services and pricing
           </p>
           <h2 className="font-heading text-3xl font-black leading-tight text-dark dark:text-light min-[390px]:text-4xl md:text-5xl">
@@ -99,7 +99,7 @@ const Services = () => {
           className="mb-7 flex flex-col justify-between gap-4 md:mb-8 md:flex-row md:items-end"
         >
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
               Pricing in USD
             </p>
             <h3 className="font-heading text-2xl font-black leading-tight text-dark dark:text-light min-[390px]:text-3xl md:text-4xl">
@@ -130,13 +130,15 @@ const Services = () => {
               }`}
             >
               {plan.featured && (
-                <div className="absolute right-5 top-5 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+                <div className="absolute right-5 top-5 rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-widest text-dark">
                   Most chosen
                 </div>
               )}
               <p
                 className={`text-xs font-bold uppercase tracking-[0.24em] ${
-                  plan.featured ? "text-brand" : "text-brand"
+                  plan.featured
+                    ? "text-[#d8b45a] dark:text-[#8a5f12]"
+                    : "text-[#8a5f12] dark:text-[#d8b45a]"
                 }`}
               >
                 {plan.title}

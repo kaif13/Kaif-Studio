@@ -45,7 +45,7 @@ const valueCards = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="px-6 py-14 md:py-16">
+    <section className="px-6 py-14 md:py-16">
       <div className="mx-auto max-w-7xl">
         <Motion.div
           variants={fadeUp}
@@ -54,7 +54,7 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mb-10 max-w-3xl"
         >
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
             Built for business outcomes
           </p>
           <h2 className="font-heading text-4xl font-black text-dark dark:text-light md:text-5xl">

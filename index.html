@@ -216,9 +216,9 @@
 
       window.addEventListener("load", function () {
         if ("requestIdleCallback" in window) {
-          requestIdleCallback(loadAnalytics, { timeout: 2500 });
+          requestIdleCallback(loadAnalytics, { timeout: 5000 });
         } else {
-          setTimeout(loadAnalytics, 1800);
+          setTimeout(loadAnalytics, 3500);
         }
       });
     </script>

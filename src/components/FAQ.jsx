@@ -39,7 +39,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="mx-auto max-w-4xl px-6 py-20 md:py-24">
+    <section className="mx-auto max-w-4xl px-6 py-20 md:py-24">
       <Motion.div
         variants={fadeUp}
         initial="hidden"
@@ -47,7 +47,7 @@ const FAQ = () => {
         viewport={{ once: true }}
         className="mb-12 text-center"
       >
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
           Questions
         </p>
         <h2 className="font-heading text-4xl font-black text-dark dark:text-light md:text-5xl">
@@ -82,7 +82,7 @@ const FAQ = () => {
               <span
                 className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                   openIndex === index
-                    ? "bg-brand text-white"
+                    ? "bg-brand text-dark"
                     : "bg-black/[0.04] text-gray dark:bg-white/[0.06]"
                 }`}
               >
