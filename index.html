@@ -23,11 +23,11 @@
     <!-- PRIMARY SEO -->
     <!-- ===================== -->
 
-    <title>Kaif Web Studio | Freelance Web Developer in Prayagraj, India</title>
+    <title>Kaif Web Studio | Web Dev for Service Businesses</title>
 
     <meta
       name="title"
-      content="Kaif Web Studio | Freelance Web Developer in Prayagraj, India"
+      content="Kaif Web Studio | Web Dev for Service Businesses"
     />
 
     <meta
@@ -54,7 +54,7 @@
     <meta property="og:locale" content="en_IN" />
     <meta
       property="og:title"
-      content="Kaif Web Studio | Freelance Web Developer in Prayagraj, India"
+      content="Kaif Web Studio | Web Dev for Service Businesses"
     />
     <meta
       property="og:description"
@@ -77,9 +77,11 @@
 
     <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kaifwebstudio" />
+    <meta name="twitter:creator" content="@kaifwebstudio" />
     <meta
       name="twitter:title"
-      content="Kaif Web Studio | Freelance Web Developer in Prayagraj, India"
+      content="Kaif Web Studio | Web Dev for Service Businesses"
     />
     <meta
       name="twitter:description"
@@ -192,19 +194,33 @@
       />
     </noscript>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-1GRR5GJ7J9"
-    ></script>
+    <!-- Google tag (gtag.js), delayed until after first render -->
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
 
-      gtag("config", "G-1GRR5GJ7J9");
+      function loadAnalytics() {
+        if (window.__kaifAnalyticsLoaded) return;
+        window.__kaifAnalyticsLoaded = true;
+
+        var script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-1GRR5GJ7J9";
+        document.head.appendChild(script);
+
+        window.gtag("js", new Date());
+        window.gtag("config", "G-1GRR5GJ7J9");
+      }
+
+      window.addEventListener("load", function () {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(loadAnalytics, { timeout: 2500 });
+        } else {
+          setTimeout(loadAnalytics, 1800);
+        }
+      });
     </script>
   </head>
 

@@ -1,7 +1,5 @@
 import React from "react";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
-import { motion as Motion } from "framer-motion";
-import { fadeUp, staggerContainer } from "../../animations";
 
 const stats = [
   { value: "7+", label: "Business builds" },
@@ -21,40 +19,23 @@ const Hero = () => {
       <div className="absolute right-0 top-20 -z-10 h-64 w-64 rounded-full bg-brand/20 blur-[110px]" />
 
       <div className="mx-auto grid max-w-7xl items-center gap-7 md:gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:grid-cols-[1.02fr_0.98fr]">
-        <Motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="max-w-4xl"
-        >
-          <Motion.div
-            variants={fadeUp}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-dark shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-light md:mb-5 md:px-4 md:text-xs md:tracking-widest"
-          >
+        <div className="max-w-4xl">
+          <div className="hero-reveal mb-4 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/80 px-3.5 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-dark shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:text-light md:mb-5 md:px-4 md:text-xs md:tracking-widest">
             <span className="h-2 w-2 rounded-full bg-brand shadow-[0_0_18px_rgba(184,137,46,0.75)]" />
             Available for premium website projects
-          </Motion.div>
+          </div>
 
-          <Motion.h1
-            variants={fadeUp}
-            className="max-w-5xl font-heading text-[2.45rem] font-black leading-[1.03] text-dark dark:text-light min-[390px]:text-[2.75rem] md:text-6xl xl:text-7xl"
-          >
+          <h1 className="max-w-5xl font-heading text-[2.45rem] font-black leading-[1.03] text-dark dark:text-light min-[390px]:text-[2.75rem] md:text-6xl xl:text-7xl">
             Premium Websites That Make Your Business Look Expensive Online
-          </Motion.h1>
+          </h1>
 
-          <Motion.p
-            variants={fadeUp}
-            className="mt-4 max-w-2xl text-[1.05rem] leading-[2.05rem] text-dark/75 dark:text-zinc-300 md:mt-5 md:text-lg md:leading-8 md:text-gray md:dark:text-white/65"
-          >
+          <p className="hero-reveal hero-reveal-delay-1 mt-4 max-w-2xl text-[1.05rem] leading-[2.05rem] text-dark/75 dark:text-zinc-300 md:mt-5 md:text-lg md:leading-8 md:text-gray md:dark:text-white/65">
             I design and build modern, mobile-first websites for cafes, real
             estate brands, jewellery stores, hotels, salons, gyms, and service
             businesses that want more trust, enquiries, and online presence.
-          </Motion.p>
+          </p>
 
-          <Motion.div
-            variants={fadeUp}
-            className="mt-5 flex flex-col gap-3 sm:flex-row md:mt-7"
-          >
+          <div className="hero-reveal hero-reveal-delay-2 mt-5 flex flex-col gap-3 sm:flex-row md:mt-7">
             <a
               href="#work"
               className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-dark px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-light shadow-xl shadow-black/15 transition-all duration-500 hover:-translate-y-1 hover:shadow-brand/25 dark:bg-light dark:text-dark"
@@ -72,12 +53,9 @@ const Hero = () => {
               <Sparkles size={17} />
               Get a Free Website Quote
             </a>
-          </Motion.div>
+          </div>
 
-          <Motion.div
-            variants={fadeUp}
-            className="mt-6 grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/10 md:mt-7"
-          >
+          <div className="hero-reveal hero-reveal-delay-3 mt-6 grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/10 md:mt-7">
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -91,16 +69,10 @@ const Hero = () => {
                 </p>
               </div>
             ))}
-          </Motion.div>
-        </Motion.div>
+          </div>
+        </div>
 
-        <Motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.15 }}
-          className="relative"
-        >
+        <div className="hero-reveal hero-reveal-delay-2 relative">
           <div className="rounded-[1.75rem] border border-black/10 bg-white/80 p-3 shadow-2xl shadow-black/10 backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
             <div className="overflow-hidden rounded-[1.35rem] border border-black/10 bg-dark dark:border-white/10">
               <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
@@ -115,11 +87,17 @@ const Hero = () => {
               <div className="grid gap-4 p-4 md:p-5">
                 <div className="relative overflow-hidden rounded-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1170&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=65&w=800&auto=format&fit=crop"
+                    srcSet="
+                      https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=60&w=520&auto=format&fit=crop 520w,
+                      https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=65&w=800&auto=format&fit=crop 800w
+                    "
+                    sizes="(min-width: 1024px) 672px, 100vw"
                     alt="Premium website mockup"
-                    width="1170"
-                    height="780"
+                    width="800"
+                    height="533"
                     fetchPriority="high"
+                    loading="eager"
                     decoding="async"
                     className="h-64 w-full object-cover md:h-80 lg:h-[390px]"
                   />
@@ -148,7 +126,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </Motion.div>
+        </div>
       </div>
     </section>
   );

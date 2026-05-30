@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Services from "./components/Services";
-import About from "./components/About";
-import WhatsApp from "./components/WhatsApp";
-import Process from "./components/Process";
-import FAQ from "./components/FAQ";
-import StartupIntro from "./components/StartupIntro";
+
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Services = lazy(() => import("./components/Services"));
+const Process = lazy(() => import("./components/Process"));
+const About = lazy(() => import("./components/About"));
+const FAQ = lazy(() => import("./components/FAQ"));
+const Contact = lazy(() => import("./components/Contact"));
+const WhatsApp = lazy(() => import("./components/WhatsApp"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,7 +22,6 @@ function App() {
 
   return (
     <div className="bg-light text-dark transition-colors duration-300 dark:bg-dark dark:text-light">
-      <StartupIntro />
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -32,17 +31,21 @@ function App() {
 
       <main>
         <Hero />
-        <Skills />
-        <Projects />
-        <Services />
-        <Process />
-        <About />
-        <FAQ />
-        <Contact />
-        <WhatsApp />
+        <Suspense fallback={null}>
+          <Skills />
+          <Projects />
+          <Services />
+          <Process />
+          <About />
+          <FAQ />
+          <Contact />
+          <WhatsApp />
+        </Suspense>
       </main>
 
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }
