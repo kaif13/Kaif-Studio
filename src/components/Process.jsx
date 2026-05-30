@@ -32,8 +32,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
-      {/* Heading */}
+    <section id="process" className="mx-auto max-w-7xl px-6 py-14 md:py-16">
       <Motion.div
         variants={fadeUp}
         initial="hidden"
@@ -42,7 +41,7 @@ const Process = () => {
         className="mb-16 md:text-center max-w-2xl mx-auto"
       >
         <h2 className="font-heading font-bold text-3xl md:text-4xl text-dark dark:text-light mb-4">
-          How the Process Works
+          How the process works
         </h2>
         <p className="text-gray text-lg">
           A simple, transparent four-step process to take your website from idea
@@ -50,7 +49,6 @@ const Process = () => {
         </p>
       </Motion.div>
 
-      {/* Steps Grid */}
       <Motion.div
         variants={staggerContainer}
         initial="hidden"

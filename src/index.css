@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-
-    @apply font-body bg-light text-dark antialiased transition-colors duration-300;
-  }
-
-
-  .dark body {
-    @apply bg-dark text-light;
-  }
-} */
 @layer base {
   :root {
     --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);

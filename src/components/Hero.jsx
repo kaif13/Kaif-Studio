@@ -70,7 +70,7 @@ const Hero = () => {
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/80 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-dark shadow-lg shadow-black/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-brand/40 dark:border-white/10 dark:bg-white/10 dark:text-light"
             >
               <Sparkles size={17} />
-              Book a Free Website Review
+              Get a Free Website Quote
             </a>
           </Motion.div>
 
@@ -117,6 +117,10 @@ const Hero = () => {
                   <img
                     src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1170&auto=format&fit=crop"
                     alt="Premium website mockup"
+                    width="1170"
+                    height="780"
+                    fetchPriority="high"
+                    decoding="async"
                     className="h-64 w-full object-cover md:h-80 lg:h-[390px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />

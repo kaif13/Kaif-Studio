@@ -5,19 +5,35 @@ import { fadeUp, staggerContainer } from "../../animations";
 
 const projects = [
   {
+    title: "Aurum Fit Club",
+    cat: "Luxury Fitness Website",
+    goal: "Built with a premium fitness experience, admin panel, contact form, BMI calculator, and membership-focused enquiry flow.",
+    tags: ["Admin panel", "Contact form", "BMI calculator"],
+    img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=70&w=760&auto=format&fit=crop",
+    link: "https://aurum-fit-club.web.app/",
+  },
+  {
     title: "Qamar Noir",
     cat: "Luxury Cafe Website",
     goal: "Designed to make the cafe look premium, client-ready, and memorable online.",
     tags: ["Luxury brand", "Cafe website", "Premium UI"],
-    img: "https://images.unsplash.com/photo-1565650839149-2c48a094196c?w=900&auto=format&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1565650839149-2c48a094196c?w=760&auto=format&fit=crop&q=70",
     link: "https://qamarnoircafe.netlify.app/",
+  },
+  {
+    title: "Haji Jewellers",
+    cat: "Luxury Jewellery Website",
+    goal: "Created to present jewellery collections with a premium brand feel, stronger trust, and clear customer enquiry paths.",
+    tags: ["Jewellery brand", "Luxury UI", "Product showcase"],
+    img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=70&w=760&auto=format&fit=crop",
+    link: "https://hajijewellers.netlify.app/",
   },
   {
     title: "Caelvorn Estates",
     cat: "Luxury Real Estate",
     goal: "Built to improve brand trust and present premium properties with authority.",
     tags: ["Real estate", "Luxury market", "Property showcase"],
-    img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1170&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=70&w=760&auto=format&fit=crop",
     link: "https://caelvorn.netlify.app/",
   },
   {
@@ -25,7 +41,7 @@ const projects = [
     cat: "Salon Website",
     goal: "Created for better online presence, trust, and appointment enquiries.",
     tags: ["Salon brand", "Booking CTA", "Local business"],
-    img: "https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=80&w=1170&auto=format&fit=crop",
+    img: "https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=70&w=640&auto=format&fit=crop",
     link: "https://sathi-saloon-center.netlify.app/",
   },
   {
@@ -33,16 +49,8 @@ const projects = [
     cat: "Automotive Landing Page",
     goal: "Built to improve buyer confidence and generate more local enquiries.",
     tags: ["Automotive", "Lead focused", "Responsive"],
-    img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=80&w=1170&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=70&w=640&auto=format&fit=crop",
     link: "https://broadway-kia.netlify.app/",
-  },
-  {
-    title: "FlowBase",
-    cat: "Business Landing Page",
-    goal: "Built to make the offer clearer and convert visitors into business leads.",
-    tags: ["Business site", "Trust layout", "CTA sections"],
-    img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2000&auto=format&fit=crop",
-    link: "https://landingpagekaif.netlify.app/",
   },
 ];
 
@@ -77,7 +85,7 @@ const Projects = () => {
           initial="visible"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-6"
+          className="grid grid-cols-1 items-start gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-6"
         >
           {projects.map((project, index) => (
             <Motion.a
@@ -96,6 +104,8 @@ const Projects = () => {
                 <img
                   src={project.img}
                   alt={project.title}
+                  width={index < 2 ? "760" : "640"}
+                  height={index < 2 ? "520" : "430"}
                   loading="lazy"
                   decoding="async"
                   className={`w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 ${
@@ -111,7 +121,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="flex h-full flex-col p-5 min-[390px]:p-6 md:p-7">
+              <div className="flex flex-col p-5 min-[390px]:p-6 md:p-7">
                 <div className="mb-4 flex items-start justify-between gap-4 min-[390px]:mb-5">
                   <h3 className="font-heading text-[1.6rem] font-black leading-tight text-dark dark:text-light min-[390px]:text-[1.7rem] md:text-[1.7rem]">
                     {project.title}
@@ -137,7 +147,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="mt-auto border-t border-black/10 pt-5 dark:border-white/10">
+                <div className="mt-5 border-t border-black/10 pt-5 dark:border-white/10">
                   <span className="inline-flex min-h-11 items-center gap-2 rounded-full bg-brand px-4 py-2 text-xs font-black uppercase tracking-widest text-white shadow-lg shadow-brand/20 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:shadow-brand/35">
                     View Live Project
                     <ArrowUpRight size={15} />

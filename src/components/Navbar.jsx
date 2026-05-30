@@ -7,7 +7,9 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
   const navLinks = [
     { name: "Work", href: "#work" },
     { name: "Services", href: "#services" },
+    { name: "Process", href: "#process" },
     { name: "About", href: "#studio-about" },
+    { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -45,7 +47,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
             href="#contact"
             className="hidden rounded-full bg-brand px-5 py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-brand/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-brand/35 sm:inline-flex"
           >
-            Free Review
+            Get a Quote
           </a>
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -82,7 +84,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
               onClick={handleLinkClick}
               className="mt-2 flex min-h-12 items-center justify-center rounded-full bg-brand px-4 py-3 text-center text-xs font-bold uppercase tracking-widest text-white"
             >
-              Book a free website review
+              Get a free website quote
             </a>
           </div>
         </div>
