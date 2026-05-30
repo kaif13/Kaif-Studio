@@ -96,8 +96,8 @@ const Hero = () => {
                     alt="Premium website mockup"
                     width="800"
                     height="533"
-                    fetchPriority="high"
-                    loading="eager"
+                    fetchPriority="low"
+                    loading="lazy"
                     decoding="async"
                     className="h-64 w-full object-cover md:h-80 lg:h-[390px]"
                   />

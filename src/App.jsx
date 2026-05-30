@@ -24,26 +24,31 @@ function App() {
 
   useEffect(() => {
     const loadActions = () => setLoadFloatingActions(true);
-    let idleId;
     let timeoutId;
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"];
 
-    const scheduleLoad = () => {
-      if ("requestIdleCallback" in window) {
-        idleId = window.requestIdleCallback(loadActions, { timeout: 2200 });
-      } else {
-        timeoutId = window.setTimeout(loadActions, 1200);
-      }
+    const cleanup = () => {
+      events.forEach((eventName) => {
+        window.removeEventListener(eventName, handleFirstInteraction);
+      });
     };
 
-    if (document.readyState === "complete") {
-      scheduleLoad();
-    } else {
-      window.addEventListener("load", scheduleLoad, { once: true });
-    }
+    const handleFirstInteraction = () => {
+      cleanup();
+      loadActions();
+    };
+
+    events.forEach((eventName) => {
+      window.addEventListener(eventName, handleFirstInteraction, {
+        once: true,
+        passive: true,
+      });
+    });
+
+    timeoutId = window.setTimeout(loadActions, 10000);
 
     return () => {
-      window.removeEventListener("load", scheduleLoad);
-      if (idleId) window.cancelIdleCallback(idleId);
+      cleanup();
       if (timeoutId) window.clearTimeout(timeoutId);
     };
   }, []);
