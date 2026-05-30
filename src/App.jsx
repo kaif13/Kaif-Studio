@@ -2,7 +2,6 @@ import React, { lazy, useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import LazySection from "./components/LazySection";
-import StartupIntro from "./components/StartupIntro";
 
 const Skills = lazy(() => import("./components/Skills"));
 const Projects = lazy(() => import("./components/Projects"));
@@ -50,8 +49,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-light text-dark transition-colors duration-300 dark:bg-dark dark:text-light">
-      <StartupIntro />
+    <div className="page-enter bg-light text-dark transition-colors duration-300 dark:bg-dark dark:text-light">
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}

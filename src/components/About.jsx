@@ -20,7 +20,7 @@ const About = () => {
         className="mx-auto grid max-w-7xl gap-8 rounded-[2rem] border border-black/10 bg-dark p-7 text-light shadow-2xl shadow-black/15 dark:border-white/10 dark:bg-white dark:text-dark md:grid-cols-[0.85fr_1.15fr] md:p-10 lg:p-12"
       >
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#c7850b] dark:text-[#bb8a0f]">
             About Kaif
           </p>
           <h2 className="font-heading text-4xl font-black leading-tight md:text-5xl">
