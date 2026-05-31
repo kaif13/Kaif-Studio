@@ -13,7 +13,7 @@ const WhatsAppLogo = () => (
 );
 
 const WhatsApp = () => {
-  const phoneNumber = "918112351108";
+  const phoneNumber = "918299699842";
   const message = "Hello! I would like to know more about your services.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
