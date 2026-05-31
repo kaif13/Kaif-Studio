@@ -35,7 +35,7 @@ const LazySection = ({ id, minHeight = 360, children }) => {
           observer.disconnect();
         }
       },
-      { rootMargin: "0px" },
+      { rootMargin: "600px 0px" },
     );
 
     observer.observe(sectionRef.current);

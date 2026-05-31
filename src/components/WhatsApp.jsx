@@ -26,7 +26,7 @@ const WhatsApp = () => {
         fixed 
         bottom-6 
         right-6 
-        z-50 
+        z-[60] 
         flex 
         items-center 
         justify-center 
@@ -37,9 +37,10 @@ const WhatsApp = () => {
         rounded-full 
         shadow-lg 
         hover:bg-green-600 
-        transition-colors 
+        transition-transform
         duration-300
-        animate-wiggle-3s
+        hover:scale-105
+        active:scale-95
       "
       aria-label="Chat on WhatsApp"
     >
