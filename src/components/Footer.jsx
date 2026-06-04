@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <p className="text-xs font-bold uppercase tracking-widest text-gray">
-          Copyright 2026
+          2026 Kaif Web Studio. All rights reserved.
         </p>
       </div>
     </footer>

@@ -17,8 +17,19 @@ const About = () => {
         initial="visible"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mx-auto grid max-w-7xl gap-8 rounded-[2rem] border border-black/10 bg-dark p-7 text-light shadow-2xl shadow-black/15 dark:border-white/10 dark:bg-white dark:text-dark md:grid-cols-[0.85fr_1.15fr] md:p-10 lg:p-12"
+        className="mx-auto grid max-w-7xl items-center gap-10 rounded-[2rem] border border-black/10 bg-dark p-7 text-light shadow-2xl shadow-black/15 dark:border-white/10 dark:bg-white dark:text-dark md:grid-cols-2 md:p-10 lg:p-12"
       >
+        <div>
+          <img
+            src="/about-kaif.jpg"
+            alt="Mohammad Kaif"
+            className="mx-auto w-4/5 rounded-2xl object-cover shadow-2xl shadow-black/20 ring-1 ring-[#B8892E]/30 md:mx-0"
+          />
+          <p className="mt-3 text-sm text-white/55 dark:text-black/55">
+            Mohammad Kaif · Founder, Kaif Web Studio
+          </p>
+        </div>
+
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#c7850b] dark:text-[#bb8a0f]">
             About Kaif
@@ -26,9 +37,6 @@ const About = () => {
           <h2 className="font-heading text-4xl font-black leading-tight md:text-5xl">
             Frontend design that makes your brand feel more valuable.
           </h2>
-        </div>
-
-        <div>
           <p className="text-base leading-8 text-white/70 dark:text-black/65 md:text-lg">
             I am Kaif, a frontend web designer and developer helping service
             businesses look premium online through clean design, modern UI, and

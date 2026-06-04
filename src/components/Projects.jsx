@@ -23,7 +23,7 @@ const projects = [
   {
     title: "Haji Jewellers",
     cat: "Luxury Jewellery Website",
-    goal: "Created to present jewellery collections with a premium brand feel, stronger trust, and clear customer enquiry paths.",
+    goal: "Premium jewellery showcase built for trust and easy enquiries.",
     tags: ["Jewellery brand", "Luxury UI", "Product showcase"],
     img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=70&w=760&auto=format&fit=crop",
     link: "https://hajijewellers.netlify.app/",
@@ -44,14 +44,14 @@ const projects = [
     img: "https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=70&w=640&auto=format&fit=crop",
     link: "https://sathi-saloon-center.netlify.app/",
   },
-  {
-    title: "Broadway Kia",
-    cat: "Automotive Landing Page",
-    goal: "Built to improve buyer confidence and generate more local enquiries.",
-    tags: ["Automotive", "Lead focused", "Responsive"],
-    img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=70&w=640&auto=format&fit=crop",
-    link: "https://broadway-kia.netlify.app/",
-  },
+  // {
+  //   title: "Broadway Kia",
+  //   cat: "Automotive Landing Page",
+  //   goal: "Built to improve buyer confidence and generate more local enquiries.",
+  //   tags: ["Automotive", "Lead focused", "Responsive"],
+  //   img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=70&w=640&auto=format&fit=crop",
+  //   link: "https://broadway-kia.netlify.app/",
+  // },
 ];
 
 const Projects = () => {
@@ -75,8 +75,8 @@ const Projects = () => {
             </h2>
           </div>
           <div className="rounded-2xl border border-black/10 bg-white/70 p-5 text-[15px] leading-7 text-gray shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] dark:text-white/65 min-[390px]:p-6 min-[390px]:text-base min-[390px]:leading-8">
-            A focused collection of business websites designed to improve
-            trust, enquiries, and online presence.
+            A focused collection of business websites designed to improve trust,
+            enquiries, and online presence.
           </div>
         </Motion.div>
 
@@ -95,9 +95,7 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={`group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand/35 hover:shadow-2xl hover:shadow-brand/10 dark:border-white/10 dark:bg-[#0b0b0b] ${
-                index < 2
-                  ? "lg:col-span-3"
-                  : "md:col-span-1 lg:col-span-2"
+                index < 2 ? "lg:col-span-3" : "md:col-span-1 lg:col-span-2"
               }`}
             >
               <div className="relative overflow-hidden bg-black">
@@ -109,7 +107,9 @@ const Projects = () => {
                   loading="lazy"
                   decoding="async"
                   className={`w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 ${
-                    index < 2 ? "h-64 min-[390px]:h-72 md:h-80" : "h-60 min-[390px]:h-64"
+                    index < 2
+                      ? "h-64 min-[390px]:h-72 md:h-80"
+                      : "h-60 min-[390px]:h-64"
                   }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />

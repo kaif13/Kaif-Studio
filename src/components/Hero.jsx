@@ -1,13 +1,12 @@
 import React from "react";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
+import HeroVisual3D from "./HeroVisual3D";
 
 const stats = [
-  { value: "7+", label: "Business builds" },
+  { value: "7+", label: "Premium Websites Designed" },
   { value: "1-2w", label: "Typical delivery" },
   { value: "100%", label: "Mobile focused" },
 ];
-
-const industries = ["Cafe", "Real Estate", "Salon", "Luxury Brand"];
 
 const Hero = () => {
   return (
@@ -72,60 +71,8 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-reveal hero-reveal-delay-2 relative">
-          <div className="rounded-[1.75rem] border border-black/10 bg-white/80 p-3 shadow-2xl shadow-black/10 backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.04]">
-            <div className="overflow-hidden rounded-[1.35rem] border border-black/10 bg-dark dark:border-white/10">
-              <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                <span className="ml-auto text-[10px] font-bold uppercase tracking-widest text-white/75">
-                  kaif studio system
-                </span>
-              </div>
-
-              <div className="grid gap-4 p-4 md:p-5">
-                <div className="relative overflow-hidden rounded-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=65&w=800&auto=format&fit=crop"
-                    srcSet="
-                      https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=60&w=520&auto=format&fit=crop 520w,
-                      https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=65&w=800&auto=format&fit=crop 800w
-                    "
-                    sizes="(min-width: 1024px) 672px, 100vw"
-                    alt="Premium website mockup"
-                    width="800"
-                    height="533"
-                    fetchPriority="low"
-                    loading="lazy"
-                    decoding="async"
-                    className="h-64 w-full object-cover md:h-80 lg:h-[390px]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#d8b45a]">
-                      Luxury website preview
-                    </p>
-                    <h2 className="mt-1 max-w-md font-heading text-2xl font-black text-white md:text-4xl">
-                      Trust-first design for serious clients.
-                    </h2>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  {industries.map((industry) => (
-                    <div
-                      key={industry}
-                      className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 p-3 text-sm font-bold text-white md:p-4"
-                    >
-                      <CheckCircle2 size={16} className="text-brand" />
-                      {industry}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="hero-reveal hero-reveal-delay-2 relative mx-auto w-full max-w-2xl lg:max-w-none">
+          <HeroVisual3D />
         </div>
       </div>
     </section>
