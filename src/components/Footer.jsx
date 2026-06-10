@@ -18,7 +18,7 @@ const Footer = () => {
             Kaif Web Studio
           </p>
           <p className="mt-2 max-w-md text-sm text-gray dark:text-white/55">
-            Premium websites for service businesses, luxury brands, and modern
+            Professional websites for service businesses, luxury brands, and modern
             local companies.
           </p>
         </div>

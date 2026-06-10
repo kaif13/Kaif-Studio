@@ -15,7 +15,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
 
   return (
     <header className="fixed inset-x-0 top-3 z-50 px-3 min-[390px]:px-4 md:top-4">
-      <nav className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between rounded-full border border-black/10 bg-white/82 px-2.5 pl-4 shadow-2xl shadow-black/10 backdrop-blur-2xl transition-colors duration-500 dark:border-white/10 dark:bg-[#0b0b0b]/82 min-[390px]:pl-5 md:h-16 md:px-3">
+      <nav className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between rounded-full border border-black/10 bg-white/82 px-2.5 pl-4 shadow-2xl shadow-black/10 backdrop-blur-2xl transition-colors duration-500 dark:border-white/10 dark:bg-dark/82 min-[390px]:pl-5 md:h-16 md:px-3">
         <a
           href="#home"
           onClick={handleLinkClick}
@@ -67,7 +67,7 @@ const Navbar = ({ darkMode, setDarkMode, isMenuOpen, setIsMenuOpen }) => {
       </nav>
 
       {isMenuOpen && (
-        <div className="mx-auto mt-3 max-w-6xl rounded-3xl border border-black/10 bg-white/95 p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl dark:border-white/10 dark:bg-[#0b0b0b]/95 md:hidden">
+        <div className="mx-auto mt-3 max-w-6xl rounded-3xl border border-black/10 bg-white/95 p-4 shadow-2xl shadow-black/10 backdrop-blur-2xl dark:border-white/10 dark:bg-dark/95 md:hidden">
           <div className="grid gap-2.5">
             {navLinks.map((link) => (
               <a

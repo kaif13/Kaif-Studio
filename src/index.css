@@ -17,25 +17,29 @@
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
 
-    background-color: #f7f8f4;
+    background-color: #f1eee8;
     background-image:
-      radial-gradient(circle at 14% 8%, rgba(184, 137, 46, 0.12), transparent 28rem),
-      radial-gradient(circle at 90% 18%, rgba(8, 10, 15, 0.05), transparent 24rem),
-      linear-gradient(180deg, rgba(255, 255, 250, 0.96), rgba(247, 248, 244, 1));
+      radial-gradient(circle at 10% 4%, rgba(177, 132, 69, 0.12), transparent 25rem),
+      radial-gradient(circle at 92% 26%, rgba(216, 209, 197, 0.28), transparent 30rem),
+      linear-gradient(180deg, #f8f6f1 0%, #f1eee8 46%, #e9e4dc 100%);
   }
 
   .dark body {
     @apply text-light;
 
-    background-color: #080a0f;
+    background-color: #181817;
     background-image:
-      radial-gradient(circle at 14% 8%, rgba(184, 137, 46, 0.18), transparent 28rem),
-      radial-gradient(circle at 90% 18%, rgba(255, 255, 255, 0.05), transparent 24rem),
-      linear-gradient(180deg, rgba(8, 10, 15, 0.98), rgba(8, 10, 15, 1));
+      radial-gradient(circle at 12% 8%, rgba(177, 132, 69, 0.18), transparent 30rem),
+      radial-gradient(circle at 88% 14%, rgba(216, 209, 197, 0.06), transparent 28rem),
+      linear-gradient(135deg, #181817 0%, #201e1a 48%, #10100f 100%);
+  }
+
+  .dark .text-gray {
+    color: #b9b4ab;
   }
 
   ::selection {
-    background: rgba(184, 137, 46, 0.22);
+    background: rgba(177, 132, 69, 0.3);
   }
 
   a,
@@ -76,12 +80,56 @@
   .hero-reveal-delay-3 {
     animation-delay: 200ms;
   }
+
+  .hero-slide-left {
+    animation: hero-slide-left 1600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  .hero-slide-right {
+    animation: hero-slide-right 1600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
+  }
+
+  .hero-slide-delay-1 {
+    animation-delay: 180ms;
+  }
+
+  .hero-slide-delay-2 {
+    animation-delay: 360ms;
+  }
 }
 
 @keyframes hero-reveal {
   from {
     opacity: 0;
     transform: translate3d(0, 14px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-slide-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-70vw, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-slide-right {
+  from {
+    opacity: 0;
+    transform: translate3d(70vw, 0, 0);
   }
 
   to {
@@ -110,10 +158,10 @@
 
 @keyframes page-enter {
   from {
-    transform: translate3d(0, 10px, 0);
+    opacity: 0.99;
   }
 
   to {
-    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }

@@ -7,7 +7,7 @@ import { fadeUp } from "../../animations";
 // --- POPUP COMPONENT ---
 const SuccessPopup = ({ onClose }) => (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm transition-opacity">
-    <div className="w-full max-w-sm rounded-2xl border border-black/10 bg-white p-8 shadow-2xl dark:border-white/10 dark:bg-[#0b0b0b]">
+    <div className="w-full max-w-sm rounded-2xl border border-black/10 bg-white p-8 shadow-2xl dark:border-white/10 dark:bg-dark">
       <div className="flex flex-col items-center space-y-4 text-center">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
           <CheckCircle size={32} />
@@ -72,11 +72,11 @@ const Contact = () => {
           className="flex flex-col justify-between rounded-2xl border border-black/10 bg-dark p-8 text-light shadow-2xl shadow-black/20 dark:border-white/10 dark:bg-white dark:text-dark md:p-10"
         >
           <div>
-            <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#d8b45a] dark:text-[#8a5f12]">
+            <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-brand">
               Book a free website review
             </p>
             <h2 className="mb-8 font-heading text-5xl font-black leading-none md:text-6xl">
-              Let's make your business look premium online.
+              Let's make your business look professional online.
             </h2>
 
             <p className="mb-10 max-w-md text-base leading-8 text-white/65 dark:text-black/65 md:text-lg">
@@ -134,10 +134,10 @@ const Contact = () => {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="h-fit rounded-2xl border border-black/10 bg-white p-6 shadow-2xl shadow-black/10 dark:border-white/10 dark:bg-[#0b0b0b] md:p-8"
+          className="h-fit rounded-2xl border border-black/10 bg-white p-6 shadow-2xl shadow-black/10 dark:border-white/10 dark:bg-dark md:p-8"
         >
           <div className="mb-8">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand">
               Project enquiry
             </p>
             <h3 className="mt-3 font-heading text-3xl font-black text-dark dark:text-light">

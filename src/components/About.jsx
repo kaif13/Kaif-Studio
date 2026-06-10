@@ -23,7 +23,7 @@ const About = () => {
           <img
             src="/about-kaif.jpg"
             alt="Mohammad Kaif"
-            className="mx-auto w-4/5 rounded-2xl object-cover shadow-2xl shadow-black/20 ring-1 ring-[#B8892E]/30 md:mx-0"
+            className="mx-auto w-4/5 rounded-2xl object-cover shadow-2xl shadow-black/20 ring-1 ring-brand/30 md:mx-0"
           />
           <p className="mt-3 text-sm text-white/55 dark:text-black/55">
             Mohammad Kaif · Founder, Kaif Web Studio
@@ -31,7 +31,7 @@ const About = () => {
         </div>
 
         <div>
-          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#c7850b] dark:text-[#bb8a0f]">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
             About Kaif
           </p>
           <h2 className="font-heading text-4xl font-black leading-tight md:text-5xl">
@@ -39,7 +39,7 @@ const About = () => {
           </h2>
           <p className="text-base leading-8 text-white/70 dark:text-black/65 md:text-lg">
             I am Kaif, a frontend web designer and developer helping service
-            businesses look premium online through clean design, modern UI, and
+            businesses look professional online through clean design, modern UI, and
             conversion-focused websites.
           </p>
 

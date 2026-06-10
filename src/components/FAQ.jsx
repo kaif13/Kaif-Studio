@@ -47,7 +47,7 @@ const FAQ = () => {
         viewport={{ once: true }}
         className="mb-12 text-center"
       >
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
           Questions
         </p>
         <h2 className="font-heading text-4xl font-black text-dark dark:text-light md:text-5xl">
@@ -69,7 +69,7 @@ const FAQ = () => {
             className={`overflow-hidden rounded-2xl border transition-all duration-500 ease-premium ${
               openIndex === index
                 ? "border-brand/40 bg-brand/5"
-                : "border-black/10 bg-white hover:border-brand/30 dark:border-white/10 dark:bg-[#0b0b0b]"
+                : "border-black/10 bg-white hover:border-brand/30 dark:border-white/10 dark:bg-dark"
             }`}
           >
             <button

@@ -1,9 +1,9 @@
 import { useCallback, useRef, useState } from "react";
 
-const GOLD = "#B8892E";
-const GOLD_HI = "#E3BB57";
-const INK = "#0B0B0E";
-const CARD = "#16161A";
+const GOLD = "#B18445";
+const GOLD_HI = "#D0AD75";
+const INK = "#181817";
+const CARD = "#24231F";
 const LINE = "rgba(255,255,255,0.10)";
 
 const Bar = ({
@@ -100,7 +100,7 @@ function SiteUI() {
             borderRadius: 12,
             border: `1px solid ${LINE}`,
             background:
-              "radial-gradient(120% 120% at 70% 20%, rgba(184,137,46,0.4), rgba(20,20,24,0.9))",
+              "radial-gradient(120% 120% at 70% 20%, rgba(177,132,69,0.4), rgba(24,24,23,0.9))",
           }}
         />
       </div>
@@ -122,7 +122,7 @@ function SiteUI() {
                 width: 18,
                 height: 18,
                 borderRadius: 6,
-                background: "rgba(184,137,46,0.3)",
+                background: "rgba(177,132,69,0.3)",
                 marginBottom: 8,
               }}
             />
@@ -144,7 +144,7 @@ function Chip({ children, className, style, z = 60 }) {
         transform: `translateZ(${z}px)`,
         background: "rgba(22,22,26,0.85)",
         backdropFilter: "blur(8px)",
-        border: `1px solid rgba(184,137,46,0.35)`,
+        border: `1px solid rgba(177,132,69,0.35)`,
         borderRadius: 14,
         padding: "10px 14px",
         boxShadow: "0 20px 40px -16px rgba(0,0,0,0.8)",
@@ -210,7 +210,7 @@ export default function HeroVisual3D() {
           inset: "10% 5%",
           borderRadius: "50%",
           background:
-            "radial-gradient(circle, rgba(184,137,46,0.45), transparent 65%)",
+            "radial-gradient(circle, rgba(177,132,69,0.45), transparent 65%)",
           filter: "blur(40px)",
           animation: "kglow 6s ease-in-out infinite",
           pointerEvents: "none",
@@ -233,7 +233,7 @@ export default function HeroVisual3D() {
             padding: 10,
             border: "1px solid rgba(255,255,255,0.08)",
             boxShadow:
-              "0 50px 90px -30px rgba(0,0,0,0.95), 0 0 0 1px rgba(184,137,46,0.15)",
+              "0 50px 90px -30px rgba(0,0,0,0.95), 0 0 0 1px rgba(177,132,69,0.15)",
           }}
         >
           <div

@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Aurum Fit Club",
     cat: "Luxury Fitness Website",
-    goal: "Built with a premium fitness experience, admin panel, contact form, BMI calculator, and membership-focused enquiry flow.",
+    goal: "Built with a professional fitness experience, admin panel, contact form, BMI calculator, and membership-focused enquiry flow.",
     tags: ["Admin panel", "Contact form", "BMI calculator"],
     img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=70&w=760&auto=format&fit=crop",
     link: "https://aurum-fit-club.web.app/",
@@ -15,15 +15,15 @@ const projects = [
   {
     title: "Qamar Noir",
     cat: "Luxury Cafe Website",
-    goal: "Designed to make the cafe look premium, client-ready, and memorable online.",
-    tags: ["Luxury brand", "Cafe website", "Premium UI"],
+    goal: "Designed to make the cafe look professional, client-ready, and memorable online.",
+    tags: ["Luxury brand", "Cafe website", "Professional UI"],
     img: "https://images.unsplash.com/photo-1565650839149-2c48a094196c?w=760&auto=format&fit=crop&q=70",
     link: "https://qamarnoircafe.netlify.app/",
   },
   {
     title: "Haji Jewellers",
     cat: "Luxury Jewellery Website",
-    goal: "Premium jewellery showcase built for trust and easy enquiries.",
+    goal: "Professional jewellery showcase built for trust and easy enquiries.",
     tags: ["Jewellery brand", "Luxury UI", "Product showcase"],
     img: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=70&w=760&auto=format&fit=crop",
     link: "https://hajijewellers.netlify.app/",
@@ -31,27 +31,19 @@ const projects = [
   {
     title: "Caelvorn Estates",
     cat: "Luxury Real Estate",
-    goal: "Built to improve brand trust and present premium properties with authority.",
+    goal: "Built to improve brand trust and present professional properties with authority.",
     tags: ["Real estate", "Luxury market", "Property showcase"],
     img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=70&w=760&auto=format&fit=crop",
     link: "https://caelvorn.netlify.app/",
   },
   {
-    title: "Sathi Salon Center",
-    cat: "Salon Website",
-    goal: "Created for better online presence, trust, and appointment enquiries.",
-    tags: ["Salon brand", "Booking CTA", "Local business"],
-    img: "https://plus.unsplash.com/premium_photo-1681488262364-8aeb1b6aac56?q=70&w=640&auto=format&fit=crop",
-    link: "https://sathi-saloon-center.netlify.app/",
+    title: "Broadway Kia",
+    cat: "Automotive Landing Page",
+    goal: "Built to improve buyer confidence and generate more local enquiries.",
+    tags: ["Automotive", "Lead focused", "Responsive"],
+    img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=70&w=640&auto=format&fit=crop",
+    link: "https://broadway-kia.netlify.app/",
   },
-  // {
-  //   title: "Broadway Kia",
-  //   cat: "Automotive Landing Page",
-  //   goal: "Built to improve buyer confidence and generate more local enquiries.",
-  //   tags: ["Automotive", "Lead focused", "Responsive"],
-  //   img: "https://images.unsplash.com/photo-1625037669052-7e033716f325?q=70&w=640&auto=format&fit=crop",
-  //   link: "https://broadway-kia.netlify.app/",
-  // },
 ];
 
 const Projects = () => {
@@ -66,17 +58,13 @@ const Projects = () => {
           className="mb-10 grid gap-5 md:mb-12 md:gap-7 lg:mb-14 lg:grid-cols-[0.9fr_0.6fr] lg:items-end"
         >
           <div>
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-[#8a5f12] dark:text-[#d8b45a]">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.24em] text-brand">
               Selected work
             </p>
             <h2 className="max-w-3xl font-heading text-3xl font-black leading-tight text-dark dark:text-light min-[390px]:text-4xl md:text-5xl">
-              Websites that make small businesses feel premium, trusted, and
+              Websites that make businesses feel professional, trusted, and
               established.
             </h2>
-          </div>
-          <div className="rounded-2xl border border-black/10 bg-white/70 p-5 text-[15px] leading-7 text-gray shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.04] dark:text-white/65 min-[390px]:p-6 min-[390px]:text-base min-[390px]:leading-8">
-            A focused collection of business websites designed to improve trust,
-            enquiries, and online presence.
           </div>
         </Motion.div>
 
@@ -94,7 +82,7 @@ const Projects = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand/35 hover:shadow-2xl hover:shadow-brand/10 dark:border-white/10 dark:bg-[#0b0b0b] ${
+              className={`group overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand/35 hover:shadow-2xl hover:shadow-brand/10 dark:border-white/10 dark:bg-dark ${
                 index < 2 ? "lg:col-span-3" : "md:col-span-1 lg:col-span-2"
               }`}
             >
@@ -113,9 +101,7 @@ const Projects = () => {
                   }`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
-                <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-white/20 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur-xl">
-                  {project.cat}
-                </span>
+
                 <div className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-dark shadow-xl transition-all duration-500 group-hover:bg-brand group-hover:text-dark">
                   <ArrowUpRight size={19} />
                 </div>
